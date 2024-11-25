@@ -22,7 +22,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn(openSans.className)}>{children}</body>
+      <body className={cn(openSans.className)}>
+        <main className="bg-background">{children}</main>
+      </body>
     </html>
   );
 }
