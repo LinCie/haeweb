@@ -62,7 +62,9 @@ export default {
   		},
   		animation: {
   			'shiny-text': 'shiny-text 8s infinite',
-  			'border-beam': 'border-beam calc(var(--duration)*1s) infinite linear'
+  			shine: 'shine 8s ease-in-out infinite',
+  			'border-beam': 'border-beam calc(var(--duration)*1s) infinite linear',
+  			gradient: 'gradient 8s linear infinite'
   		},
   		keyframes: {
   			'shiny-text': {
@@ -71,6 +73,14 @@ export default {
   				},
   				'30%, 60%': {
   					'background-position': 'calc(100% + var(--shiny-width)) 0'
+  				}
+  			},
+  			shine: {
+  				from: {
+  					backgroundPosition: '200% 0'
+  				},
+  				to: {
+  					backgroundPosition: '-200% 0'
   				}
   			},
   			trail: {
@@ -84,6 +94,11 @@ export default {
   			'border-beam': {
   				'100%': {
   					'offset-distance': '100%'
+  				}
+  			},
+  			gradient: {
+  				to: {
+  					backgroundPosition: 'var(--bg-size) 0'
   				}
   			}
   		}
