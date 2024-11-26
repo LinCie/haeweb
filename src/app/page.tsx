@@ -1,3 +1,5 @@
-export default function Home() {
-  return <></>;
+import { LandingPage } from "@/views/landing";
+
+export default function Landing() {
+  return <LandingPage />;
 }
