@@ -50,7 +50,7 @@ export default function HeroSection() {
               Solusi{" "}
               {words.map((word, index) => {
                 if (index === words.length - 1) {
-                  return word;
+                  return "dan " + word;
                 } else {
                   return word + ", ";
                 }
