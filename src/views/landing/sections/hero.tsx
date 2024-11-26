@@ -2,7 +2,7 @@ import AnimatedShinyText from "@/components/ui/animated-shiny-text";
 import { BorderBeam } from "@/components/ui/border-beam";
 import BoxReveal from "@/components/ui/box-reveal";
 import { Button } from "@/components/ui/button";
-import CycleText from "@/components/ui/cycle-text";
+import { FlipWords } from "@/components/ui/flip-words";
 import Meteors from "@/components/ui/meteors";
 import { ArrowRightIcon, Phone } from "lucide-react";
 
@@ -47,7 +47,15 @@ export default function HeroSection() {
           {/* Heading */}
           <header className="mx-auto flex max-w-2xl flex-col items-center justify-center md:items-start">
             <h2 id="hero-section-title" className="sr-only">
-              Solusi Terpercaya, Termurah, dan Terbaik untuk Kebutuhan CNC Anda
+              Solusi{" "}
+              {words.map((word, index) => {
+                if (index === words.length - 1) {
+                  return word;
+                } else {
+                  return word + ", ";
+                }
+              })}{" "}
+              untuk Kebutuhan CNC Anda
             </h2>
             <BoxReveal boxColor="#126BC1">
               <div
@@ -56,10 +64,14 @@ export default function HeroSection() {
                 className="mb-2 max-w-xl scroll-m-20 text-center text-4xl font-extrabold tracking-tight md:mb-3 md:text-left md:text-5xl lg:mb-4 lg:text-6xl"
               >
                 Solusi{" "}
-                <CycleText
+                <FlipWords
+                  words={words}
+                  className="bg-gradient-to-r from-primary to-[#126BC1] bg-clip-text text-transparent"
+                />{" "}
+                {/* <CycleText
                   className="bg-gradient-to-r from-primary to-[#126BC1] bg-clip-text text-transparent"
                   words={words}
-                />{" "}
+                />{" "} */}
                 untuk Kebutuhan CNC Anda
               </div>
             </BoxReveal>
