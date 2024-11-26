@@ -2,7 +2,7 @@ import AnimatedShinyText from "@/components/ui/animated-shiny-text";
 import { BorderBeam } from "@/components/ui/border-beam";
 import BoxReveal from "@/components/ui/box-reveal";
 import { Button } from "@/components/ui/button";
-import { FlipWords } from "@/components/ui/flip-words";
+import CycleText from "@/components/ui/cycle-text";
 import Meteors from "@/components/ui/meteors";
 import { ArrowRightIcon, Phone } from "lucide-react";
 
@@ -64,14 +64,10 @@ export default function HeroSection() {
                 className="mb-2 max-w-xl scroll-m-20 text-center text-4xl font-extrabold tracking-tight md:mb-3 md:text-left md:text-5xl lg:mb-4 lg:text-6xl"
               >
                 Solusi{" "}
-                <FlipWords
-                  words={words}
+                <CycleText
                   className="bg-gradient-to-r from-primary to-[#126BC1] bg-clip-text text-transparent"
+                  words={words}
                 />{" "}
-                {/* <CycleText
-                  className="bg-gradient-to-r from-primary to-[#126BC1] bg-clip-text text-transparent"
-                  words={words}
-                />{" "} */}
                 untuk Kebutuhan CNC Anda
               </div>
             </BoxReveal>
