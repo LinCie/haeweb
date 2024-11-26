@@ -62,7 +62,10 @@ const Feature = ({
       {index >= 4 && (
         <div className="pointer-events-none absolute inset-0 h-full w-full bg-gradient-to-b from-neutral-100 to-transparent opacity-0 transition duration-200 group-hover/feature:opacity-100 dark:from-neutral-800" />
       )}
-      <div className="relative z-10 mb-4 px-6 text-neutral-600 dark:text-neutral-400 md:px-10 [&_svg]:size-6 md:[&_svg]:size-8">
+      <div
+        aria-hidden
+        className="relative z-10 mb-4 px-6 text-neutral-600 dark:text-neutral-400 md:px-10 [&_svg]:size-6 md:[&_svg]:size-8"
+      >
         {icon}
       </div>
       <div className="relative z-10 mb-2 px-6 text-lg font-bold md:px-10">
