@@ -62,8 +62,7 @@ export default function HeroSection() {
                 aria-hidden
                 className="mb-2 max-w-xl scroll-m-20 text-center text-4xl font-extrabold tracking-tight md:mb-3 md:text-left md:text-5xl lg:mb-4 lg:text-6xl"
               >
-                Solusi
-                <FlipWords className="text-[#126BC1]" words={words} />
+                Solusi <FlipWords className="text-[#126BC1]" words={words} />{" "}
                 untuk Kebutuhan CNC Anda
               </div>
             </BoxReveal>
