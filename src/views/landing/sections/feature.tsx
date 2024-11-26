@@ -1,3 +1,4 @@
+import BlurFade from "@/components/ui/blur-fade";
 import {
   CardSection,
   CardSectionContainer,
@@ -6,7 +7,7 @@ import {
   CardSectionTitle,
   CardSectionContent,
 } from "@/components/ui/card-section";
-import { cn } from "@/lib/utils";
+import { cn, useMobileDetect } from "@/lib/utils";
 import { Package, Settings, User } from "lucide-react";
 import { ReactElement } from "react";
 
@@ -48,8 +49,13 @@ const Feature = ({
   icon: React.ReactNode;
   index: number;
 }) => {
+  const detectMobile = useMobileDetect();
+
   return (
-    <div
+    <BlurFade
+      inView
+      inViewMargin="-100px"
+      delay={detectMobile.isMobile() ? 0 : 0.25 * index}
       className={cn(
         "group/feature relative flex flex-col py-10 dark:border-neutral-800 lg:border-r",
         (index === 0 || index === 4) && "dark:border-neutral-800 lg:border-l",
@@ -77,7 +83,7 @@ const Feature = ({
       <p className="relative z-10 max-w-xs px-6 text-sm text-neutral-600 dark:text-neutral-300 md:px-10">
         {description}
       </p>
-    </div>
+    </BlurFade>
   );
 };
 
@@ -90,13 +96,18 @@ export default function FeatureSection() {
     >
       <CardSectionContainer>
         <CardSectionHeader>
-          <CardSectionTitle id="feature-section-title">
-            Kenapa pilih HaeBot?
-          </CardSectionTitle>
-          <CardSectionSubtitle className="pb-0">
-            HaeBot menyediakan komponen CNC berkualitas tinggi dan layanan
-            konsultasi ahli untuk meningkatkan efisiensi operasional mesin Anda.
-          </CardSectionSubtitle>
+          <BlurFade inView inViewMargin="-100px">
+            <CardSectionTitle id="feature-section-title">
+              Kenapa pilih HaeBot?
+            </CardSectionTitle>
+          </BlurFade>
+          <BlurFade inView inViewMargin="-100px">
+            <CardSectionSubtitle className="pb-0">
+              HaeBot menyediakan komponen CNC berkualitas tinggi dan layanan
+              konsultasi ahli untuk meningkatkan efisiensi operasional mesin
+              Anda.
+            </CardSectionSubtitle>
+          </BlurFade>
         </CardSectionHeader>
 
         <CardSectionContent className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 py-12 md:grid-cols-2 lg:grid-cols-3">
