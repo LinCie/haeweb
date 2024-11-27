@@ -89,11 +89,7 @@ const Feature = ({
 
 export default function FeatureSection() {
   return (
-    <CardSection
-      id="feature-section"
-      aria-labelledby="feature-section-title"
-      className="w-full py-10 md:py-16 lg:py-20"
-    >
+    <CardSection id="feature-section" aria-labelledby="feature-section-title">
       <CardSectionContainer>
         <CardSectionHeader>
           <BlurFade inView inViewMargin="-100px">

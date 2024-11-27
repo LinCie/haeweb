@@ -7,10 +7,7 @@ function CardSection({
   ...props
 }: React.ComponentPropsWithRef<"section">) {
   return (
-    <section
-      className={cn("w-full px-4 py-10 md:py-16 lg:py-20", className)}
-      {...props}
-    />
+    <section className={cn("w-full px-4 py-6 md:py-8", className)} {...props} />
   );
 }
 
