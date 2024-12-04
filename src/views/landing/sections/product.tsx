@@ -32,8 +32,8 @@ interface ProductCardProps {
 
 function ProductCard({ name, link, description, image }: ProductCardProps) {
   return (
-    <CarouselItem className="group/card pl-8 sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
-      <Card className="flex h-fit flex-col overflow-hidden rounded-xl">
+    <CarouselItem className="pl-8 sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
+      <Card className="group/card flex h-fit flex-col overflow-hidden rounded-xl">
         <div className="relative h-[300px] overflow-hidden">
           <Image
             loading="lazy"
