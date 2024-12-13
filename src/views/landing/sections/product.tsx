@@ -227,9 +227,11 @@ export default function ProductSection() {
     <Section id="product-section" aria-labelledby="product-section-title">
       <SectionContainer>
         <SectionHeader className="mb-4 items-center text-center md:mb-5">
-          <SectionTitle id="product-section-title">
-            Galeri Produk Kami
-          </SectionTitle>
+          <BlurFade inView inViewMargin="-100px">
+            <SectionTitle id="product-section-title">
+              Galeri Produk Kami
+            </SectionTitle>
+          </BlurFade>
         </SectionHeader>
         <SectionContent>
           <Carousel
