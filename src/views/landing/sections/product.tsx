@@ -46,7 +46,7 @@ function ProductCard({
       <BlurFade
         inView={detectMobile.isMobile() ? index < 1 : index < 4}
         inViewMargin="-100px"
-        delay={detectMobile.isMobile() ? 0 : 0.25 * index}
+        delay={detectMobile.isMobile() ? 0 : 0.2 * index}
       >
         <Card className="group/card flex h-fit flex-col overflow-hidden rounded-xl">
           <div className="relative h-[300px] select-none overflow-hidden">
