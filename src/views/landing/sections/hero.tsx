@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { FlipWords } from "@/components/ui/flip-words";
 import Meteors from "@/components/ui/meteors";
 import { ArrowRightIcon, Phone } from "lucide-react";
+import Link from "next/link";
 
 export default function HeroSection() {
   const words: string[] = ["Terpercaya", "Termurah", "Terbaik"];
@@ -31,15 +32,18 @@ export default function HeroSection() {
             <BoxReveal boxColor="#126BC1">
               <Button
                 variant="expandIcon"
+                asChild
                 size="sm"
                 className="group rounded-full bg-secondary from-primary to-[#126BC1] hover:bg-gradient-to-r [&_svg]:size-4"
                 Icon={ArrowRightIcon}
                 iconPlacement="right"
               >
-                <AnimatedShinyText className="inline-flex items-center justify-center text-xs transition ease-out group-hover:text-background group-hover:duration-300">
-                  ✨ Lihat layanan yang kami tawarkan
-                </AnimatedShinyText>
-                <BorderBeam size={35} duration={12} delay={9} />
+                <Link href="#feature-section">
+                  <AnimatedShinyText className="inline-flex items-center justify-center text-xs transition ease-out group-hover:text-background group-hover:duration-300">
+                    ✨ Lihat layanan yang kami tawarkan
+                  </AnimatedShinyText>
+                  <BorderBeam size={35} duration={12} delay={9} />
+                </Link>
               </Button>
             </BoxReveal>
           </div>

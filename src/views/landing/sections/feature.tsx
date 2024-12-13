@@ -89,7 +89,11 @@ const Feature = ({
 
 export default function FeatureSection() {
   return (
-    <CardSection id="feature-section" aria-labelledby="feature-section-title">
+    <CardSection
+      id="feature-section"
+      aria-labelledby="feature-section-title"
+      className="scroll-m-32"
+    >
       <CardSectionContainer>
         <CardSectionHeader>
           <BlurFade inView inViewMargin="-100px">
