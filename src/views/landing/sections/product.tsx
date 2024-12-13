@@ -75,7 +75,7 @@ function ProductCard({
             <div className="font-semibold transition-all group-hover/card:translate-x-2">
               {name}
             </div>
-            <div className="mb-4 truncate">{description}</div>
+            <div className="mb-4 truncate text-sm">{description}</div>
             <div className="select-none space-y-2">
               <Button
                 variant="ringHover"
