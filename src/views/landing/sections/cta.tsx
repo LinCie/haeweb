@@ -12,11 +12,14 @@ import BlurFade from "@/components/ui/blur-fade";
 
 export default function CTASection() {
   return (
-    <CardSection>
+    <CardSection id="cta-section" aria-labelledby="cta-section-title">
       <CardSectionContainer>
         <CardSectionHeader className="items-center">
           <BlurFade inView inViewMargin="-100px">
-            <CardSectionTitle className="max-w-screen-lg text-center">
+            <CardSectionTitle
+              id="cta-section-title"
+              className="max-w-screen-lg text-center"
+            >
               Optimalkan Kinerja CNC Anda Bersama HaeBot!
             </CardSectionTitle>
           </BlurFade>
