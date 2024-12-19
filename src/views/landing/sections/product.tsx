@@ -239,7 +239,6 @@ export default function ProductSection() {
               align: "start",
               loop: true,
             }}
-            className="pb-12"
           >
             <CarouselContent className="-ml-8">
               {products.map((product, index) => (
