@@ -1,3 +1,4 @@
+import CustomerSection from "./sections/customer";
 import FeatureSection from "./sections/feature";
 import HeroSection from "./sections/hero";
 import ProductSection from "./sections/product";
@@ -9,6 +10,7 @@ export function LandingPage() {
       <HeroSection />;
       <FeatureSection />
       <ProductSection />
+      <CustomerSection />
     </>
   );
 }
