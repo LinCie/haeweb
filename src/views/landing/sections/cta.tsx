@@ -16,13 +16,14 @@ export default function CTASection() {
       <CardSectionContainer>
         <CardSectionHeader className="items-center">
           <BlurFade inView inViewMargin="-100px">
-            <CardSectionTitle className="text-center">
-              Hubungi kami sekarang!
+            <CardSectionTitle className="max-w-screen-lg text-center">
+              Optimalkan Kinerja CNC Anda Bersama HaeBot!
             </CardSectionTitle>
           </BlurFade>
           <BlurFade inView inViewMargin="-100px">
-            <CardSectionSubtitle className="text-center">
-              Dapatkan kejutan menarik bila anda menghubungi dari web HaeBot!
+            <CardSectionSubtitle className="max-w-screen-md text-center">
+              Bergabunglah dengan kami di HaeBot untuk mendapatkan komponen CNC
+              berkualitas tinggi dan layanan konsultasi ahli
             </CardSectionSubtitle>
           </BlurFade>
         </CardSectionHeader>
