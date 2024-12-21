@@ -14,19 +14,19 @@ export default function HeroSection() {
     <section
       id="hero-section"
       aria-labelledby="hero-section-title"
-      className="mt-32 w-full"
+      className="h-screen w-full"
     >
       <div
         aria-live="polite"
         aria-hidden
-        className="absolute inset-0 top-[-8rem] overflow-hidden"
+        className="absolute inset-0 overflow-hidden"
       >
         <Meteors number={25} />
       </div>
 
-      <div className="mx-auto flex max-w-screen-xl flex-col px-6 md:flex-row md:px-8">
+      <div className="mx-auto flex h-full max-w-screen-xl flex-col items-center justify-center px-6 md:flex-row md:px-8">
         {/* Text Section */}
-        <div className="max-w-2xl">
+        <div className="flex max-w-2xl flex-col justify-center pt-40 md:pt-0">
           {/* Upper Button */}
           <div className="mb-8 flex justify-center md:mb-12 md:justify-start lg:mb-14">
             <BoxReveal boxColor="#126BC1">
