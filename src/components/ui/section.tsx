@@ -36,7 +36,7 @@ function SectionTitle({
   return (
     <h2
       className={cn(
-        "max-w-xl text-3xl font-bold leading-tight text-primary lg:text-4xl",
+        "max-w-xl text-2xl font-bold leading-tight text-primary lg:text-3xl",
         className,
       )}
       {...props}
