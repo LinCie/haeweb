@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { SidebarProvider } from "@/components/ui/sidebar";
+import { AppSidebar } from "@/components/layout/app-sidebar";
+import Header from "@/components/layout/header";
 
 export const metadata: Metadata = {
   title: "HaeBot | Komponen & Konsultasi CNC | PT HaeBot Teknologi Indonesia",
@@ -70,7 +73,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn(openSans.className)}>
-        <main className="bg-background">{children}</main>
+        <SidebarProvider defaultOpen={false}>
+          <AppSidebar />
+          <Header />
+          <main className="w-full bg-background">{children}</main>
+        </SidebarProvider>
       </body>
     </html>
   );
