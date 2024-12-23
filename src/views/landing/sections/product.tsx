@@ -4,7 +4,6 @@ import Image, { StaticImageData } from "next/image";
 
 import { FaWhatsapp } from "react-icons/fa6";
 import { LuStore, LuExternalLink } from "react-icons/lu";
-import machineImage from "@/assets/images/machine.jpg";
 
 import { Card } from "@/components/ui/card";
 import {
@@ -23,22 +22,16 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import BlurFade from "@/components/ui/blur-fade";
 import { useMobileDetect } from "@/lib/utils";
+import { useEffect, useState } from "react";
+import { categories } from "@/shared/categories";
 
 interface ProductCardProps {
   index: number;
   name: string;
-  description: string;
-  link: string;
   image: StaticImageData;
 }
 
-function ProductCard({
-  name,
-  link,
-  description,
-  image,
-  index,
-}: ProductCardProps) {
+function ProductCard({ name, image, index }: ProductCardProps) {
   const detectMobile = useMobileDetect();
 
   const isInInitialView = detectMobile.isMobile() ? index < 1 : index < 4;
@@ -69,10 +62,9 @@ function ProductCard({
           </div>
         </div>
         <div className="from-neutral-100 to-transparent p-2 transition-colors group-hover/card:bg-gradient-to-br">
-          <div className="font-semibold transition-all group-hover/card:translate-x-2">
+          <div className="mb-2 font-semibold transition-all group-hover/card:translate-x-2">
             {name}
           </div>
-          <div className="mb-4 truncate text-sm">{description}</div>
           <div className="select-none space-y-2">
             <Button
               variant="ringHover"
@@ -80,7 +72,7 @@ function ProductCard({
               className="group/button w-full"
               asChild
             >
-              <Link target="_blank" href={link}>
+              <Link target="_blank" href={name}>
                 Lihat di Katalog{" "}
                 <LuStore
                   aria-hidden
@@ -94,7 +86,7 @@ function ProductCard({
               className="group/button w-full bg-green-500 hover:bg-green-500/90 hover:ring-green-500/90"
               asChild
             >
-              <Link target="_blank" href={link}>
+              <Link target="_blank" href={name}>
                 Chat Kami{" "}
                 <FaWhatsapp
                   aria-hidden
@@ -130,98 +122,24 @@ function ProductCard({
 }
 
 export default function ProductSection() {
-  const products: Omit<ProductCardProps, "index">[] = [
-    {
-      name: "Product 1",
-      description: "Description of product 1",
-      link: "https://example.com",
-      image: machineImage,
-    },
-    {
-      name: "Product 2",
-      description: "Description of product 2",
-      link: "https://example.com",
-      image: machineImage,
-    },
-    {
-      name: "Product 3",
-      description: "Description of product 3",
-      link: "https://example.com",
-      image: machineImage,
-    },
-    {
-      name: "Product 4",
-      description: "Description of product 4",
-      link: "https://example.com",
-      image: machineImage,
-    },
-    {
-      name: "Product 5",
-      description: "Description of product 5",
-      link: "https://example.com",
-      image: machineImage,
-    },
-    {
-      name: "Product 6",
-      description: "Description of product 6",
-      link: "https://example.com",
-      image: machineImage,
-    },
-    {
-      name: "Product 7",
-      description: "Description of product 7",
-      link: "https://example.com",
-      image: machineImage,
-    },
-    {
-      name: "Product 8",
-      description: "Description of product 8",
-      link: "https://example.com",
-      image: machineImage,
-    },
-    {
-      name: "Product 9",
-      description: "Description of product 9",
-      link: "https://example.com",
-      image: machineImage,
-    },
-    {
-      name: "Product 10",
-      description: "Description of product 10",
-      link: "https://example.com",
-      image: machineImage,
-    },
-    {
-      name: "Product 11",
-      description: "Description of product 11",
-      link: "https://example.com",
-      image: machineImage,
-    },
-    {
-      name: "Product 12",
-      description: "Description of product 12",
-      link: "https://example.com",
-      image: machineImage,
-    },
-    {
-      name: "Product 13",
-      description: "Description of product 13",
-      link: "https://example.com",
-      image: machineImage,
-    },
-    {
-      name: "Product 14",
-      description: "Description of product 14",
-      link: "https://example.com",
-      image: machineImage,
-    },
-    {
-      name: "Product 15",
-      description: "Description of product 15",
-      link: "https://example.com",
-      image: machineImage,
-    },
-  ];
+  const [products, setProducts] = useState<Omit<ProductCardProps, "index">[]>(
+    [],
+  );
+
+  useEffect(() => {
+    async function loadCategories() {
+      for (const category of categories) {
+        const { default: image } = await category.image();
+        setProducts((previous) => {
+          return previous.concat({
+            name: category.name,
+            image: image,
+          });
+        });
+      }
+    }
+    loadCategories();
+  }, []);
 
   return (
     <Section id="product-section" aria-labelledby="product-section-title">

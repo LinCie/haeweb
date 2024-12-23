@@ -1,5 +1,6 @@
 import React from "react";
 import { Home, ShoppingBag, Info, Phone } from "lucide-react";
+import { categories } from "@/shared/categories";
 
 export interface IHeaderLink {
   display: string;
@@ -8,7 +9,6 @@ export interface IHeaderLink {
   content?: {
     display: string;
     url: string;
-    description: string;
   }[];
 }
 
@@ -22,23 +22,12 @@ export const headerLinks: IHeaderLink[] = [
     display: "Products",
     url: "/products",
     icon: <ShoppingBag />,
-    content: [
-      {
-        display: "test 1",
-        url: "/",
-        description: "lorem ipsum dolor sit amet",
-      },
-      {
-        display: "test 2",
-        url: "/",
-        description: "lorem ipsum dolor sit amet",
-      },
-      {
-        display: "test 3",
-        url: "/",
-        description: "lorem ipsum dolor sit amet",
-      },
-    ],
+    content: categories.map((category) => {
+      return {
+        display: category.name,
+        url: category.link,
+      };
+    }),
   },
   {
     display: "About",

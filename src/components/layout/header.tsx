@@ -76,14 +76,14 @@ export default function Header() {
                         {headerLink.display}
                       </NavigationMenuTrigger>
                       <NavigationMenuContent>
-                        <ul className="grid w-[250px] gap-3 p-4 md:grid-cols-1">
+                        <ul className="grid max-h-96 w-[250px] gap-3 overflow-scroll p-4 md:grid-cols-1">
                           {headerLink.content.map((content) => (
                             <ListItem
                               key={content.display}
                               title={content.display}
                               href={content.url}
                             >
-                              {content.description}
+                              {/* {content.description} */}
                             </ListItem>
                           ))}
                         </ul>
