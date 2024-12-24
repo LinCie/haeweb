@@ -3,7 +3,7 @@ export default function Footer() {
 
   return (
     <footer className="w-full bg-primary text-primary-foreground">
-      <div className="p-2 text-center">
+      <div className="p-2 text-center text-sm">
         Copyright © {year} PT HaeBot Teknologi Indonesia. All rights reserved.
       </div>
     </footer>
