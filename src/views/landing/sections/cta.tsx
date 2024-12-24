@@ -9,6 +9,7 @@ import {
   CardSectionTitle,
 } from "@/components/ui/card-section";
 import BlurFade from "@/components/ui/blur-fade";
+import Link from "next/link";
 
 export default function CTASection() {
   return (
@@ -32,8 +33,10 @@ export default function CTASection() {
         </CardSectionHeader>
         <CardSectionContent className="flex justify-center">
           <BlurFade inView inViewMargin="-100px">
-            <Button>
-              Hubungi Kami <FaPhone aria-hidden className="ml-2 size-4" />
+            <Button asChild>
+              <Link href="#contact-section" target="_self">
+                Hubungi Kami <FaPhone aria-hidden className="ml-2 size-4" />
+              </Link>
             </Button>
           </BlurFade>
         </CardSectionContent>

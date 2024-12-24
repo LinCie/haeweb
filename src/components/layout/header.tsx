@@ -119,8 +119,11 @@ export default function Header() {
             Icon={Phone}
             iconPlacement="right"
             className="bg-gradient-to-r from-primary to-[#126BC1] [&_svg]:size-4"
+            asChild
           >
-            Hubungi Kami
+            <Link href="#contact-section" target="_self">
+              Hubungi Kami
+            </Link>
           </Button>
         </div>
       </div>

@@ -15,12 +15,12 @@ export interface IHeaderLink {
 export const headerLinks: IHeaderLink[] = [
   {
     display: "Home",
-    url: "/",
+    url: "#hero-section",
     icon: <Home />,
   },
   {
     display: "Products",
-    url: "/products",
+    url: "#product-section",
     icon: <ShoppingBag />,
     content: categories.map((category) => {
       return {
@@ -31,12 +31,12 @@ export const headerLinks: IHeaderLink[] = [
   },
   {
     display: "About",
-    url: "/about",
+    url: "#about-section",
     icon: <Info />,
   },
   {
     display: "Contacts",
-    url: "/contacts",
+    url: "#contact-section",
     icon: <Phone />,
   },
 ];
