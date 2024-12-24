@@ -138,6 +138,7 @@ export default function ContactSection() {
                     return (
                       <Button
                         key={"contact-icon-" + idx}
+                        className="h-auto px-4 py-4"
                         variant="secondary"
                         asChild
                       >
