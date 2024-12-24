@@ -24,7 +24,7 @@ import {
 export function AppSidebar() {
   return (
     <Sidebar
-      className="z-[100] md:hidden"
+      className="z-30 md:hidden"
       variant="sidebar"
       collapsible="offcanvas"
     >
