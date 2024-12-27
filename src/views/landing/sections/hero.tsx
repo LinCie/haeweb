@@ -14,7 +14,7 @@ export default function HeroSection() {
     <section
       id="hero-section"
       aria-labelledby="hero-section-title"
-      className="h-screen w-full"
+      className="w-full py-16 md:py-24"
     >
       <div
         aria-live="polite"
@@ -26,7 +26,7 @@ export default function HeroSection() {
 
       <div className="mx-auto flex h-full max-w-screen-xl flex-col items-center justify-center px-6 md:flex-row md:px-8">
         {/* Text Section */}
-        <div className="flex max-w-2xl flex-col justify-center pt-40 md:pt-0">
+        <div className="flex max-w-2xl flex-col justify-center md:pt-0">
           {/* Upper Button */}
           <div className="mb-8 flex justify-center md:mb-12 md:justify-start lg:mb-14">
             <BoxReveal boxColor="#126BC1">

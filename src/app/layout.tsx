@@ -76,9 +76,11 @@ export default function RootLayout({
       <body className={cn(openSans.className)}>
         <SidebarProvider defaultOpen={false}>
           <AppSidebar />
-          <Header />
-          <div className="w-full">
-            <main className="w-full bg-background">{children}</main>
+          <div className="flex w-full flex-col">
+            <Header />
+            <div className="w-full">
+              <main className="w-full bg-background">{children}</main>
+            </div>
             <Footer />
           </div>
         </SidebarProvider>
