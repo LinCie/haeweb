@@ -9,11 +9,16 @@ import {
   SectionTitle,
 } from "@/components/ui/section";
 import Image, { StaticImageData } from "next/image";
-import machineImage from "@/assets/images/machine.jpg";
 import { cn } from "@/lib/utils";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
 import BlurFade from "@/components/ui/blur-fade";
+import customer1 from "@/assets/images/customer-1.webp";
+import customer2 from "@/assets/images/customer-2.webp";
+import customer3 from "@/assets/images/customer-3.webp";
+import customer4 from "@/assets/images/customer-4.webp";
+import customer5 from "@/assets/images/customer-5.webp";
+import customer6 from "@/assets/images/customer-6.webp";
 
 function CustomerImage({ name, grid, image, index = 0 }: CustomerImageProps) {
   const ref = useRef(null);
@@ -55,38 +60,33 @@ export default function CustomerSection() {
   const customers: CustomerImageProps[] = [
     {
       name: "Customer 1",
-      grid: "md:col-span-3 md:row-span-3",
-      image: machineImage,
+      grid: "md:col-span-1 md:row-span-2 lg:col-span-1 lg:row-span-2",
+      image: customer1,
     },
     {
       name: "Customer 2",
-      grid: "md:col-span-1 md:row-span-3 lg:row-span-2",
-      image: machineImage,
+      grid: "md:col-span-1 md:row-span-1 lg:col-span-1 lg:row-span-1",
+      image: customer2,
     },
     {
       name: "Customer 3",
-      grid: "md:col-span-1 lg:col-span-2 md:row-span-2",
-      image: machineImage,
+      grid: "md:col-span-1 md:row-span-1 lg:col-span-1 lg:row-span-1",
+      image: customer3,
     },
     {
       name: "Customer 4",
-      grid: "hidden md:block md:col-span-3 md:row-span-3",
-      image: machineImage,
+      grid: "md:col-span-2 md:row-span-1 lg:col-span-1 lg:row-span-1",
+      image: customer4,
     },
     {
       name: "Customer 5",
-      grid: "hidden md:block md:col-span-1 md:row-span-3 lg:row-span-2",
-      image: machineImage,
+      grid: "md:col-span-1 md:row-span-1 lg:col-span-1 lg:row-span-1",
+      image: customer5,
     },
     {
       name: "Customer 6",
-      grid: "hidden md:block md:col-span-1 md:row-span-2",
-      image: machineImage,
-    },
-    {
-      name: "Customer 7",
-      grid: "hidden md:block lg:col-span-1 md:col-span-2 md:row-span-2",
-      image: machineImage,
+      grid: "md:col-span-2 md:row-span-1 lg:col-span-2 lg:row-span-1",
+      image: customer6,
     },
   ];
 
@@ -104,7 +104,7 @@ export default function CustomerSection() {
             </SectionSubtitle>
           </SectionHeader>
         </BlurFade>
-        <SectionContent className="grid h-[700px] grid-cols-1 gap-4 md:grid-cols-4 lg:h-[550px] lg:grid-cols-6">
+        <SectionContent className="grid h-[900px] grid-cols-1 gap-4 md:h-[700px] md:grid-cols-3 lg:h-[550px] lg:grid-cols-4">
           {customers.map((customer, index) => {
             return (
               <CustomerImage key={customer.name} index={index} {...customer} />
