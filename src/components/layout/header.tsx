@@ -58,7 +58,7 @@ export default function Header() {
   const { scrollY } = useScroll();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    setIsScrolled(latest > 64);
+    setIsScrolled(latest > 80);
   });
   return (
     <header
