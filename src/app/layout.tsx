@@ -6,6 +6,7 @@ import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/layout/app-sidebar";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
+import TopHeader from "@/components/layout/top-header";
 
 export const metadata: Metadata = {
   title: "HaeBot | Komponen & Konsultasi CNC | PT HaeBot Teknologi Indonesia",
@@ -77,6 +78,7 @@ export default function RootLayout({
         <SidebarProvider defaultOpen={false}>
           <AppSidebar />
           <div className="flex w-full flex-col">
+            <TopHeader />
             <Header />
             <div className="w-full">
               <main className="w-full bg-background">{children}</main>
