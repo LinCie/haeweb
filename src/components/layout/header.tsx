@@ -23,6 +23,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { SidebarTrigger } from "../ui/sidebar";
 import { useMotionValueEvent, useScroll } from "framer-motion";
+import { contactIcons } from "@/shared/contacts";
 
 const ListItem = React.forwardRef<
   React.ComponentRef<"a">,
@@ -130,6 +131,20 @@ export default function Header() {
               })}
             </NavigationMenuList>
           </NavigationMenu>
+        </div>
+        <div className="hidden gap-4 md:flex">
+          {contactIcons.map((contact) => {
+            return (
+              <Button
+                key={contact.icon + "-header"}
+                className="h-auto border-none bg-transparent px-4 py-4 outline-none"
+                variant="outline"
+                asChild
+              >
+                <Link href={contact.link}>{contact.icon}</Link>
+              </Button>
+            );
+          })}
         </div>
         <div>
           <Button
