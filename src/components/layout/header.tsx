@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -22,6 +22,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { SidebarTrigger } from "../ui/sidebar";
+import { useMotionValueEvent, useScroll } from "framer-motion";
 
 const ListItem = React.forwardRef<
   React.ComponentRef<"a">,
@@ -51,10 +52,27 @@ const ListItem = React.forwardRef<
 ListItem.displayName = "ListItem";
 
 export default function Header() {
+  const [isScrolled, setIsScrolled] = useState<boolean>(false);
+
   const pathname = usePathname();
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    setIsScrolled(latest > 64);
+  });
   return (
-    <header className="sticky w-full z-20 top-0 bg-background shadow">
-      <div className="mx-auto flex max-w-screen-2xl items-center justify-center gap-1 px-4 py-3 md:gap-5">
+    <header
+      className={cn(
+        "sticky top-0 z-20 w-full transition-all",
+        isScrolled ? "bg-background/95 shadow backdrop-blur" : "bg-transparent",
+      )}
+    >
+      <div
+        className={cn(
+          "mx-auto flex max-w-screen-2xl items-center justify-center gap-1 px-3 py-4 transition-all md:gap-5",
+          isScrolled && "md:px-4 md:py-5",
+        )}
+      >
         <SidebarTrigger className="size-8 md:hidden" />
         <Image
           src={haebotLogo}
@@ -72,7 +90,7 @@ export default function Header() {
                 if (headerLink.content !== undefined) {
                   return (
                     <NavigationMenuItem key={headerLink.display}>
-                      <NavigationMenuTrigger className="text-foreground/80 hover:text-foreground/70 focus:text-foreground/70">
+                      <NavigationMenuTrigger className="bg-inherit text-foreground/80 hover:text-foreground/70 focus:text-foreground/70">
                         {headerLink.display}
                       </NavigationMenuTrigger>
                       <NavigationMenuContent>
@@ -99,7 +117,7 @@ export default function Header() {
                         aria-current={isCurrent ? "page" : "false"}
                         className={cn(
                           navigationMenuTriggerStyle(),
-                          "text-foreground/80 hover:text-foreground/70 focus:text-foreground/70",
+                          "bg-inherit text-foreground/80 hover:text-foreground/70 focus:text-foreground/70",
                           isCurrent &&
                             "text-primary hover:text-primary/70 focus:text-primary/70",
                         )}
