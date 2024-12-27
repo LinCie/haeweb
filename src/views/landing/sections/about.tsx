@@ -21,26 +21,29 @@ export default function AboutSection() {
         />
         <div className="flex flex-1 flex-col justify-center px-6 py-6 md:px-6 md:py-10 lg:px-8 lg:py-10 xl:px-10 xl:py-12">
           <BlurFade inView inViewMargin="-100px">
-            <div className="mb-1 font-bold md:mb-2">About Us</div>
+            <CardSectionTitle id="about-section-title" className="mb-1 md:mb-2">
+              Tentang Kami
+            </CardSectionTitle>
           </BlurFade>
           <BlurFade inView inViewMargin="-100px">
-            <CardSectionTitle id="about-section-title" className="mb-2 md:mb-4">
-              Sejarah
-            </CardSectionTitle>
+            <CardSectionSubtitle className="mb-1 pb-0 font-bold md:mb-2">
+              Solusi Lengkap untuk Kebutuhan CNC Anda
+            </CardSectionSubtitle>
           </BlurFade>
           <BlurFade inView inViewMargin="-100px">
             <div>
               <CardSectionSubtitle className="pb-1 text-left md:pb-2 lg:pb-3">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Phasellus facilisis euismod tellus, dictum consequat elit
-                laoreet pretium. Aenean dictum augue laoreet, varius ex ac,
-                lobortis turpis. Nunc nec convallis sapien.
+                Haebot Teknologi adalah mitra terpercaya untuk kebutuhan CNC
+                Anda, menyediakan solusi lengkap mulai dari sparepart
+                berkualitas hingga layanan konsultasi profesional. Kami fokus
+                pada kualitas dan keandalan untuk mendukung produktivitas serta
+                efisiensi Anda.
               </CardSectionSubtitle>
-              <CardSectionSubtitle className="pb-0 text-left">
-                Nullam eu massa luctus, mollis nisl sagittis, tincidunt nulla.
-                Ut felis est, porta quis sollicitudin at, hendrerit ut ante.
-                Quisque semper enim at turpis mollis, ut suscipit est elementum.
-                Aenean fermentum nibh eros, ac ultricies augue dignissim vel.
+              <CardSectionSubtitle>
+                Kami juga menawarkan layanan perbaikan mesin CNC yang cepat dan
+                pengadaan mesin sesuai kebutuhan spesifik Anda. Dengan
+                pengalaman dan dedikasi tinggi, Haebot Teknologi siap menjadi
+                mitra terbaik dalam memenuhi berbagai kebutuhan CNC Anda.
               </CardSectionSubtitle>
             </div>
           </BlurFade>
