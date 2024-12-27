@@ -8,7 +8,7 @@ import {
   CardSectionContent,
 } from "@/components/ui/card-section";
 import { cn, useMobileDetect } from "@/lib/utils";
-import { Package, Settings, User } from "lucide-react";
+import { Package, Settings, User, Wrench } from "lucide-react";
 import { ReactElement } from "react";
 
 interface IFeature {
@@ -19,21 +19,27 @@ interface IFeature {
 
 const features: IFeature[] = [
   {
-    title: "Komponen CNC Berkualitas",
+    title: "Sparepart CNC",
     description:
-      "Temukan berbagai macam suku cadang CNC dari merek-merek terkemuka, yang disesuaikan dengan kebutuhan industri Anda.",
+      "Pusat sparepart CNC terpercaya, menyediakan sparepart CNC yang dijamin aman, berkualitas, dan siap mendukung performa mesin Anda.",
     icon: <Package />,
   },
   {
-    title: "Konsultasi Ahli",
+    title: "Konsultasi",
     description:
-      "Manfaatkan konsultasi teknis mendalam kami untuk mengoptimalkan kinerja dan efisiensi mesin Anda.",
+      "Tidak hanya jual sparepart, kami juga menyediakan konsultasi untuk solusi terbaik CNC Anda.",
     icon: <User />,
   },
   {
-    title: "Solusi Otomatisasi",
+    title: "Perbaikan Mesin",
     description:
-      "HaeBot adalah mitra Anda dalam mencapai produktivitas maksimal dengan solusi CNC yang andal.",
+      "Haebot menyediakan layanan perbaikan dan optimalisasi mesin untuk kembalikan performa maksimal.",
+    icon: <Wrench />,
+  },
+  {
+    title: "Pengadaan Mesin",
+    description:
+      "Kami dapat membantu menyediakan mesin CNC yang disesuaikan dengan kebutuhan bisnis Anda.",
     icon: <Settings />,
   },
 ];
@@ -98,19 +104,17 @@ export default function FeatureSection() {
         <CardSectionHeader>
           <BlurFade inView inViewMargin="-100px">
             <CardSectionTitle id="feature-section-title">
-              Kenapa pilih HaeBot?
+              Layanan Kami
             </CardSectionTitle>
           </BlurFade>
           <BlurFade inView inViewMargin="-100px">
             <CardSectionSubtitle className="pb-0">
-              HaeBot menyediakan komponen CNC berkualitas tinggi dan layanan
-              konsultasi ahli untuk meningkatkan efisiensi operasional mesin
-              Anda.
+              Haebot menyediakan Solusi Lengkap untuk Kebutuhan CNC Anda
             </CardSectionSubtitle>
           </BlurFade>
         </CardSectionHeader>
 
-        <CardSectionContent className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 py-12 md:grid-cols-2 lg:grid-cols-3">
+        <CardSectionContent className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 py-12 md:grid-cols-2 lg:grid-cols-4">
           {features.map((feature, index) => (
             <Feature key={index} {...feature} index={index} />
           ))}
