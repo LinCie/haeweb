@@ -90,7 +90,7 @@ export default function Header() {
 
                 if (headerLink.content !== undefined) {
                   return (
-                    <NavigationMenuItem key={headerLink.display}>
+                    <NavigationMenuItem key={headerLink.display + "-header"}>
                       <NavigationMenuTrigger className="bg-inherit text-foreground/80 hover:text-foreground/70 focus:text-foreground/70">
                         {headerLink.display}
                       </NavigationMenuTrigger>
@@ -112,7 +112,7 @@ export default function Header() {
                 }
 
                 return (
-                  <NavigationMenuItem key={headerLink.display}>
+                  <NavigationMenuItem key={headerLink.display + "-header"}>
                     <Link href={headerLink.url} legacyBehavior passHref>
                       <NavigationMenuLink
                         aria-current={isCurrent ? "page" : "false"}
@@ -133,10 +133,10 @@ export default function Header() {
           </NavigationMenu>
         </div>
         <div className="hidden gap-4 md:flex">
-          {contactIcons.map((contact) => {
+          {contactIcons.map((contact, idx) => {
             return (
               <Button
-                key={contact.icon + "-header"}
+                key={contact.link  + idx + "-header"}
                 className="h-auto border-none bg-transparent px-4 py-4 outline-none"
                 variant="outline"
                 asChild

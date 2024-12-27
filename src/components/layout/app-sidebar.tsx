@@ -14,12 +14,16 @@ import {
   SidebarGroupLabel,
   SidebarMenuSub,
   SidebarMenuSubItem,
+  SidebarFooter,
 } from "@/components/ui/sidebar";
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
 } from "../ui/collapsible";
+import { contactIcons } from "@/shared/contacts";
+import { Button } from "../ui/button";
+import Link from "next/link";
 
 export function AppSidebar() {
   return (
@@ -61,7 +65,7 @@ export function AppSidebar() {
                       </CollapsibleTrigger>
 
                       {/* Nested menu items */}
-                      <CollapsibleContent className="data-[state=closed]:animate-slide-up data-[state=open]:animate-slide-down overflow-hidden">
+                      <CollapsibleContent className="overflow-hidden data-[state=closed]:animate-slide-up data-[state=open]:animate-slide-down">
                         <SidebarMenuSub>
                           {link.content.map((content) => {
                             return (
@@ -94,6 +98,21 @@ export function AppSidebar() {
           </SidebarMenu>
         </SidebarGroup>
       </SidebarContent>
+
+      <SidebarFooter className="flex flex-row justify-evenly gap-4">
+        {contactIcons.map((contact, idx) => {
+          return (
+            <Button
+              key={contact.link + idx + "-appbar"}
+              className="h-auto border-none bg-transparent px-4 py-4 outline-none"
+              variant="outline"
+              asChild
+            >
+              <Link href={contact.link}>{contact.icon}</Link>
+            </Button>
+          );
+        })}
+      </SidebarFooter>
     </Sidebar>
   );
 }
