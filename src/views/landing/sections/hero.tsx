@@ -3,9 +3,11 @@ import { BorderBeam } from "@/components/ui/border-beam";
 import BoxReveal from "@/components/ui/box-reveal";
 import { Button } from "@/components/ui/button";
 import { FlipWords } from "@/components/ui/flip-words";
-import Meteors from "@/components/ui/meteors";
 import { ArrowRightIcon, Phone } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
+import heroCover from "@/assets/images/hero_cover.webp";
+import heroMachine from "@/assets/images/machines.webp";
 
 export default function HeroSection() {
   const words: string[] = ["Terpercaya", "Termurah", "Terbaik"];
@@ -14,17 +16,23 @@ export default function HeroSection() {
     <section
       id="hero-section"
       aria-labelledby="hero-section-title"
-      className="w-full py-16 md:py-24"
+      className="relative w-full py-16 md:py-24"
     >
-      <div
-        aria-live="polite"
-        aria-hidden
-        className="absolute inset-0 overflow-hidden"
-      >
-        <Meteors number={25} />
+      <div className="absolute inset-0 top-[-100] z-0">
+        <Image
+          src={heroCover}
+          alt=""
+          aria-hidden
+          height={720}
+          width={1280}
+          loading="lazy"
+          decoding="async"
+          className="size-full object-cover object-center"
+        />
       </div>
+      <div className="absolute inset-0 top-[-100] z-0 bg-white/80" />
 
-      <div className="mx-auto flex h-full max-w-screen-xl flex-col items-center justify-center px-6 md:flex-row md:px-8">
+      <div className="z-10 mx-auto flex h-full max-w-screen-xl flex-col items-center justify-center gap-12 px-6 md:flex-row md:gap-8 md:px-8">
         {/* Text Section */}
         <div className="flex max-w-2xl flex-col justify-center md:pt-0">
           {/* Upper Button */}
@@ -97,7 +105,18 @@ export default function HeroSection() {
         </div>
 
         {/* Image Section */}
-        <div className="flex-1"></div>
+        <div className="z-20 flex h-full flex-1 items-center justify-center">
+          <Image
+            id="weird-image"
+            src={heroMachine}
+            width={500}
+            height={500}
+            alt="cnc machines"
+            decoding="async"
+            loading="lazy"
+            className="size-96 object-cover md:size-[450px]"
+          />
+        </div>
       </div>
     </section>
   );
