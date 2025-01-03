@@ -64,8 +64,8 @@ export default function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full bg-transparent transition-all",
-        isScrolled ? "bg-background/95 shadow backdrop-blur" : "bg-transparent",
+        "sticky top-0 z-50 w-full transition-all",
+        isScrolled ? "bg-background/95 shadow backdrop-blur" : "bg-background/0",
       )}
     >
       <div
