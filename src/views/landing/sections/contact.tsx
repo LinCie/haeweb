@@ -84,7 +84,10 @@ export default function ContactSection() {
                         variant="secondary"
                         asChild
                       >
-                        <Link target="_blank" href="https://example.com">
+                        <Link
+                          target="_blank"
+                          href="https://www.tokopedia.com/electronicsbot"
+                        >
                           <Image
                             src={tokopedia}
                             alt="Tokopedia"
@@ -101,7 +104,10 @@ export default function ContactSection() {
                         variant="secondary"
                         asChild
                       >
-                        <Link target="_blank" href="https://example.com">
+                        <Link
+                          target="_blank"
+                          href="https://shopee.co.id/farhan.id"
+                        >
                           <Image
                             src={shopee}
                             alt="Shopee"
@@ -118,7 +124,10 @@ export default function ContactSection() {
                         variant="secondary"
                         asChild
                       >
-                        <Link target="_blank" href="https://example.com">
+                        <Link
+                          target="_blank"
+                          href="https://www.bukalapak.com/u/ufam_kun"
+                        >
                           <Image
                             src={bukalapak}
                             alt="Bukalapak"

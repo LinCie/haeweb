@@ -23,19 +23,19 @@ export const contacts: ContactProps[] = [
 
 export const contactIcons: IContactIcon[] = [
   {
-    link: "https://example.com",
+    link: "https://www.facebook.com/people/Haebot-Teknologi/61561255135421/",
     icon: <SiFacebook className="size-5" aria-label="Facebook" />,
   },
   {
-    link: "https://example.com",
+    link: "https://www.tiktok.com/@haebotstore",
     icon: <SiTiktok className="size-5" aria-label="TikTok" />,
   },
   {
-    link: "https://example.com",
+    link: "https://www.instagram.com/haebot_tech/",
     icon: <SiInstagram className="size-5" aria-label="Instagram" />,
   },
   {
-    link: "https://example.com",
+    link: "https://www.youtube.com/@haebot",
     icon: <SiYoutube className="size-5" aria-label="Youtube" />,
   },
 ];
