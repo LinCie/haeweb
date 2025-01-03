@@ -64,7 +64,7 @@ export default function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full transition-all",
+        "sticky top-0 z-50 w-full bg-transparent transition-all",
         isScrolled ? "bg-background/95 shadow backdrop-blur" : "bg-transparent",
       )}
     >
@@ -136,7 +136,7 @@ export default function Header() {
           {contactIcons.map((contact, idx) => {
             return (
               <Button
-                key={contact.link  + idx + "-header"}
+                key={contact.link + idx + "-header"}
                 className="h-auto border-none bg-transparent px-4 py-4 outline-none"
                 variant="outline"
                 asChild
