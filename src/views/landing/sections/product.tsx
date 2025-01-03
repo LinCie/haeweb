@@ -35,6 +35,7 @@ function ProductCard({ name, image, index }: ProductCardProps) {
   const detectMobile = useMobileDetect();
 
   const isInInitialView = detectMobile.isMobile() ? index < 1 : index < 4;
+  const text = encodeURI(`Halo min! Mau tanya tentang ${name}`);
 
   function ProductContent() {
     return (
@@ -86,7 +87,10 @@ function ProductCard({ name, image, index }: ProductCardProps) {
               className="group/button w-full bg-green-500 hover:bg-green-500/90 hover:ring-green-500/90"
               asChild
             >
-              <Link target="_blank" href={name}>
+              <Link
+                target="_blank"
+                href={`https://wa.me/6285246428746?text=${text}`}
+              >
                 Chat Kami{" "}
                 <FaWhatsapp
                   aria-hidden
