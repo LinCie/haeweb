@@ -12,6 +12,7 @@ import Image from "next/image";
 import tokopedia from "@/assets/toko/tokopedia.webp";
 import shopee from "@/assets/toko/shopee.webp";
 import bukalapak from "@/assets/toko/bukalapak.webp";
+import Haebot from "@/assets/haebot";
 
 function Contact({ icon, text }: ContactProps) {
   return (
@@ -34,6 +35,14 @@ export default function ContactSection() {
           <div className="flex flex-col gap-4 pt-12 lg:flex-row">
             <div className="flex-1">
               <BlurFade inView inViewMargin="-100px">
+                <div className="flex items-center">
+                  <Haebot className="size-16 fill-background md:size-20" />
+                  <h1 className="text-lg font-medium leading-3 tracking-tight md:text-xl">
+                    PT Haebot Teknologi Indonesia
+                  </h1>
+                </div>
+              </BlurFade>
+              <BlurFade inView inViewMargin="-100px">
                 <CardSectionTitle className="mb-2 text-primary-foreground md:mb-3 lg:mb-4">
                   Kunjungi Kami di
                 </CardSectionTitle>
@@ -46,12 +55,12 @@ export default function ContactSection() {
                 </div>
               </BlurFade>
               <BlurFade inView inViewMargin="-100px">
-                <div className="flex flex-wrap gap-2">
+                <div className="mt-4 flex flex-wrap gap-2">
                   {contactIcons.map((contact, idx) => {
                     return (
                       <Button
                         key={"contact-icon-" + idx}
-                        className="h-auto px-4 py-4"
+                        className="h-auto px-3 py-3 [&_svg]:size-6"
                         variant="secondary"
                         asChild
                       >
@@ -66,60 +75,62 @@ export default function ContactSection() {
                     );
                   })}
                 </div>
-                <div className="mt-4 flex items-center justify-start gap-3">
-                  <div>Kami Tersedia di</div>
-                  <div className="flex flex-wrap gap-2">
-                    <Button
-                      className="h-auto overflow-hidden rounded-full bg-secondary px-4 py-4"
-                      variant="secondary"
-                      asChild
-                    >
-                      <Link target="_blank" href="https://example.com">
-                        <Image
-                          src={tokopedia}
-                          alt="Tokopedia"
-                          loading="lazy"
-                          decoding="async"
-                          width={16}
-                          height={16}
-                          className="size-4 object-cover object-center"
-                        />
-                      </Link>
-                    </Button>
-                    <Button
-                      className="h-auto overflow-hidden rounded-full bg-secondary px-4 py-4"
-                      variant="secondary"
-                      asChild
-                    >
-                      <Link target="_blank" href="https://example.com">
-                        <Image
-                          src={shopee}
-                          alt="Shopee"
-                          loading="lazy"
-                          decoding="async"
-                          width={16}
-                          height={16}
-                          className="size-4 object-cover object-center"
-                        />
-                      </Link>
-                    </Button>
-                    <Button
-                      className="h-auto overflow-hidden rounded-full bg-secondary px-4 py-4"
-                      variant="secondary"
-                      asChild
-                    >
-                      <Link target="_blank" href="https://example.com">
-                        <Image
-                          src={bukalapak}
-                          alt="Bukalapak"
-                          loading="lazy"
-                          decoding="async"
-                          width={16}
-                          height={16}
-                          className="size-4 object-cover object-center"
-                        />
-                      </Link>
-                    </Button>
+                <div className="mt-4">
+                  <div className="mb-2 font-medium">Kami Tersedia di</div>
+                  <div className="flex items-center justify-start gap-3">
+                    <div className="flex flex-wrap gap-2">
+                      <Button
+                        className="h-auto overflow-hidden rounded-md bg-secondary px-3 py-3"
+                        variant="secondary"
+                        asChild
+                      >
+                        <Link target="_blank" href="https://example.com">
+                          <Image
+                            src={tokopedia}
+                            alt="Tokopedia"
+                            loading="lazy"
+                            decoding="async"
+                            width={16}
+                            height={16}
+                            className="size-6 object-cover object-center"
+                          />
+                        </Link>
+                      </Button>
+                      <Button
+                        className="h-auto overflow-hidden rounded-md bg-secondary px-3 py-3"
+                        variant="secondary"
+                        asChild
+                      >
+                        <Link target="_blank" href="https://example.com">
+                          <Image
+                            src={shopee}
+                            alt="Shopee"
+                            loading="lazy"
+                            decoding="async"
+                            width={16}
+                            height={16}
+                            className="size-6 object-cover object-center"
+                          />
+                        </Link>
+                      </Button>
+                      <Button
+                        className="h-auto overflow-hidden rounded-md bg-secondary px-3 py-3"
+                        variant="secondary"
+                        asChild
+                      >
+                        <Link target="_blank" href="https://example.com">
+                          <Image
+                            src={bukalapak}
+                            alt="Bukalapak"
+                            loading="lazy"
+                            decoding="async"
+                            width={16}
+                            height={16}
+                            className="size-6 object-cover object-center"
+                          />
+                        </Link>
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </BlurFade>
