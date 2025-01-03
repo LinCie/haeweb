@@ -30,7 +30,7 @@ export default function CarouselSection() {
 
   return (
     <section
-      className="my-6 min-h-screen w-full flex-col overflow-hidden"
+      className="relative my-6 w-full flex-col overflow-hidden"
       id="carousel-section"
       aria-label="banner kami"
     >
@@ -58,16 +58,16 @@ export default function CarouselSection() {
           </CarouselItem>
         </CarouselContent>
       </Carousel>
-      <div className="mt-4 flex items-end justify-center gap-4">
+      <div className="absolute inset-x-0 bottom-3 flex items-center justify-center gap-3 md:bottom-8 md:gap-4">
         <div
           className={cn(
-            "size-6 rounded-full",
+            "size-3 rounded-full md:size-4",
             current === 1 ? "bg-primary" : "bg-foreground",
           )}
         />
         <div
           className={cn(
-            "size-6 rounded-full",
+            "size-3 rounded-full md:size-4",
             current === 2 ? "bg-primary" : "bg-foreground",
           )}
         />
