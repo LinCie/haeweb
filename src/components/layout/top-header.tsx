@@ -2,9 +2,9 @@ import Haebot from "@/assets/haebot";
 
 export default function TopHeader() {
   return (
-    <div className="z-20 flex h-20 items-center justify-center bg-background px-6 md:px-12">
+    <div className="z-20 flex h-20 items-center justify-center bg-background px-3 md:px-6">
       <div className="flex items-center justify-center">
-        <Haebot className="size-20 fill-primary" />
+        <Haebot className="size-16 fill-primary" />
         <h1 className="max-w-40 text-base font-medium leading-3 tracking-tight md:max-w-xs md:text-lg lg:text-xl">
           PT Haebot Teknologi Indonesia
         </h1>

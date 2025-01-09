@@ -24,13 +24,14 @@ import {
 import { SidebarTrigger } from "../ui/sidebar";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { contactIcons } from "@/shared/contacts";
+import { ScrollArea } from "../ui/scroll-area";
 
 const ListItem = React.forwardRef<
   React.ComponentRef<"a">,
   React.ComponentPropsWithoutRef<"a">
 >(({ className, title, children, href, ...props }, ref) => {
   return (
-    <li>
+    <div>
       <NavigationMenuLink asChild>
         <Link
           ref={ref}
@@ -47,7 +48,7 @@ const ListItem = React.forwardRef<
           </p>
         </Link>
       </NavigationMenuLink>
-    </li>
+    </div>
   );
 });
 ListItem.displayName = "ListItem";
@@ -94,7 +95,7 @@ export default function Header() {
                         {headerLink.display}
                       </NavigationMenuTrigger>
                       <NavigationMenuContent>
-                        <ul className="grid max-h-96 w-[250px] gap-3 overflow-scroll p-4 md:grid-cols-1">
+                        <ScrollArea className="flex max-h-96 w-[250px] flex-col gap-3 p-4">
                           {headerLink.content.map((content) => (
                             <ListItem
                               key={content.display}
@@ -104,7 +105,7 @@ export default function Header() {
                               {/* {content.description} */}
                             </ListItem>
                           ))}
-                        </ul>
+                        </ScrollArea>
                       </NavigationMenuContent>
                     </NavigationMenuItem>
                   );
