@@ -10,7 +10,7 @@ export const categories: ICategories[] = [
   // Main Products
   {
     name: "Motor Stepper",
-    link: "motor-stepper",
+    link: "https://katalog.haebot.com/product-category/motor-stepper/",
     image: () =>
       import("@/assets/icons/motor-stepper.webp").catch(
         () => import("@/assets/icons/12.webp"),
@@ -18,7 +18,7 @@ export const categories: ICategories[] = [
   },
   {
     name: "Rail",
-    link: "rail",
+    link: "https://katalog.haebot.com/product-category/rail/",
     image: () =>
       import("@/assets/icons/rail.webp").catch(
         () => import("@/assets/icons/12.webp"),
@@ -26,7 +26,7 @@ export const categories: ICategories[] = [
   },
   {
     name: "Drag Chain",
-    link: "drag-chain",
+    link: "https://katalog.haebot.com/product-category/drag-chain/",
     image: () =>
       import("@/assets/icons/drag-chain.webp").catch(
         () => import("@/assets/icons/12.webp"),
@@ -34,7 +34,7 @@ export const categories: ICategories[] = [
   },
   {
     name: "Shaft Holder",
-    link: "shaft-holder",
+    link: "https://katalog.haebot.com/product-category/shaft-holder/",
     image: () =>
       import("@/assets/icons/shaft-holder.webp").catch(
         () => import("@/assets/icons/12.webp"),
@@ -42,7 +42,7 @@ export const categories: ICategories[] = [
   },
   {
     name: "Bearing Block",
-    link: "bearing-block",
+    link: "https://katalog.haebot.com/product-category/bearing-block/",
     image: () =>
       import("@/assets/icons/bearing-block.webp").catch(
         () => import("@/assets/icons/12.webp"),
@@ -50,7 +50,7 @@ export const categories: ICategories[] = [
   },
   {
     name: "Pulley",
-    link: "pulley",
+    link: "https://katalog.haebot.com/product-category/pulley/",
     image: () =>
       import("@/assets/icons/pulley.webp").catch(
         () => import("@/assets/icons/12.webp"),
@@ -58,7 +58,7 @@ export const categories: ICategories[] = [
   },
   {
     name: "Belt",
-    link: "belt",
+    link: "https://katalog.haebot.com/product-category/pulley/",
     image: () =>
       import("@/assets/icons/belt.webp").catch(
         () => import("@/assets/icons/12.webp"),
@@ -66,7 +66,7 @@ export const categories: ICategories[] = [
   },
   {
     name: "PSU",
-    link: "psu",
+    link: "https://katalog.haebot.com/product-category/psu/",
     image: () =>
       import("@/assets/icons/psu.webp").catch(
         () => import("@/assets/icons/12.webp"),
@@ -74,7 +74,7 @@ export const categories: ICategories[] = [
   },
   {
     name: "Laser CO2",
-    link: "laser-co2",
+    link: "https://katalog.haebot.com/product-category/laser-co2/",
     image: () =>
       import("@/assets/icons/laser-co2.webp").catch(
         () => import("@/assets/icons/12.webp"),
@@ -82,7 +82,7 @@ export const categories: ICategories[] = [
   },
   {
     name: "Ballscrew",
-    link: "ballscrew",
+    link: "https://katalog.haebot.com/product-category/ballscrew/",
     image: () =>
       import("@/assets/icons/ballscrew.webp").catch(
         () => import("@/assets/icons/12.webp"),
@@ -90,7 +90,7 @@ export const categories: ICategories[] = [
   },
   {
     name: "Leadscrew",
-    link: "leadscrew",
+    link: "https://katalog.haebot.com/product-category/leadscrew/",
     image: () =>
       import("@/assets/icons/leadscrew.webp").catch(
         () => import("@/assets/icons/12.webp"),
@@ -98,12 +98,12 @@ export const categories: ICategories[] = [
   },
   {
     name: "Perkabelan",
-    link: "perkabelan",
+    link: "https://katalog.haebot.com/product-category/perkabelan/",
     image: () => import("@/assets/icons/12.webp"),
   },
   {
     name: "Pertukangan",
-    link: "pertukangan",
+    link: "https://katalog.haebot.com/product-category/pertukangan/",
     image: () =>
       import("@/assets/icons/pertukangan.webp").catch(
         () => import("@/assets/icons/12.webp"),
@@ -111,7 +111,7 @@ export const categories: ICategories[] = [
   },
   {
     name: "Spindle",
-    link: "spindle",
+    link: "https://katalog.haebot.com/product-category/spindle/",
     image: () =>
       import("@/assets/icons/spindle.webp").catch(
         () => import("@/assets/icons/12.webp"),
@@ -119,7 +119,7 @@ export const categories: ICategories[] = [
   },
   {
     name: "Inverter",
-    link: "inverter",
+    link: "https://katalog.haebot.com/product-category/inverter/",
     image: () =>
       import("@/assets/icons/inverter.webp").catch(
         () => import("@/assets/icons/12.webp"),
@@ -127,7 +127,7 @@ export const categories: ICategories[] = [
   },
   {
     name: "Aluminium Profile",
-    link: "aluminium-profile",
+    link: "https://katalog.haebot.com/product-category/leadscrew/",
     image: () =>
       import("@/assets/icons/aluminium-profile.webp").catch(
         () => import("@/assets/icons/12.webp"),
@@ -135,7 +135,7 @@ export const categories: ICategories[] = [
   },
   {
     name: "Gantry",
-    link: "gantry",
+    link: "https://katalog.haebot.com/product-category/gantry/",
     image: () =>
       import("@/assets/icons/gantry.webp").catch(
         () => import("@/assets/icons/12.webp"),
@@ -143,7 +143,7 @@ export const categories: ICategories[] = [
   },
   {
     name: "Baut",
-    link: "baut",
+    link: "https://katalog.haebot.com/product-category/baut/",
     image: () =>
       import("@/assets/icons/baut.webp").catch(
         () => import("@/assets/icons/12.webp"),
@@ -151,7 +151,7 @@ export const categories: ICategories[] = [
   },
   {
     name: "Mur",
-    link: "mur",
+    link: "https://katalog.haebot.com/product-category/mur/",
     image: () =>
       import("@/assets/icons/mur.webp").catch(
         () => import("@/assets/icons/12.webp"),
@@ -159,7 +159,7 @@ export const categories: ICategories[] = [
   },
   {
     name: "Dinamo",
-    link: "dinamo",
+    link: "https://katalog.haebot.com/product-category/dinamo/",
     image: () =>
       import("@/assets/icons/dinamo.webp").catch(
         () => import("@/assets/icons/12.webp"),
@@ -167,7 +167,7 @@ export const categories: ICategories[] = [
   },
   {
     name: "Driver",
-    link: "driver",
+    link: "https://katalog.haebot.com/product-category/driver/",
     image: () =>
       import("@/assets/icons/driver.webp").catch(
         () => import("@/assets/icons/12.webp"),
@@ -175,7 +175,7 @@ export const categories: ICategories[] = [
   },
   {
     name: "GearBox",
-    link: "gearbox",
+    link: "https://katalog.haebot.com/product-category/gearbox/",
     image: () =>
       import("@/assets/icons/gearbox.webp").catch(
         () => import("@/assets/icons/12.webp"),
@@ -183,7 +183,7 @@ export const categories: ICategories[] = [
   },
   {
     name: "Module & Sensor",
-    link: "module-sensor",
+    link: "https://katalog.haebot.com/product-category/module-&-sensor/",
     image: () =>
       import("@/assets/icons/module.webp").catch(
         () => import("@/assets/icons/12.webp"),
@@ -191,7 +191,7 @@ export const categories: ICategories[] = [
   },
   {
     name: "Coupler",
-    link: "coupler",
+    link: "https://katalog.haebot.com/product-category/coupler/",
     image: () =>
       import("@/assets/icons/coupler.webp").catch(
         () => import("@/assets/icons/12.webp"),
