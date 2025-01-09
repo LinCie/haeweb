@@ -28,10 +28,11 @@ import { categories } from "@/shared/categories";
 interface ProductCardProps {
   index: number;
   name: string;
+  link: string;
   image: StaticImageData;
 }
 
-function ProductCard({ name, image, index }: ProductCardProps) {
+function ProductCard({ name, image, index, link }: ProductCardProps) {
   const detectMobile = useMobileDetect();
 
   const isInInitialView = detectMobile.isMobile() ? index < 1 : index < 4;
@@ -57,8 +58,11 @@ function ProductCard({ name, image, index }: ProductCardProps) {
               Icon={LuExternalLink}
               size="sm"
               className="bg-transparent text-background opacity-0 outline outline-1 outline-background transition-opacity hover:bg-background hover:text-foreground group-hover/card:opacity-100"
+              asChild
             >
-              Lihat di Katalog
+              <Link href={link} target="_blank">
+                Lihat di Katalog
+              </Link>
             </Button>
           </div>
         </div>
@@ -73,7 +77,7 @@ function ProductCard({ name, image, index }: ProductCardProps) {
               className="group/button w-full"
               asChild
             >
-              <Link target="_blank" href={name}>
+              <Link target="_blank" href={link}>
                 Lihat di Katalog{" "}
                 <LuStore
                   aria-hidden
@@ -137,6 +141,7 @@ export default function ProductSection() {
         setProducts((previous) => {
           return previous.concat({
             name: category.name,
+            link: category.link,
             image: image,
           });
         });
