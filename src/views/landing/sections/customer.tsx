@@ -20,7 +20,13 @@ import customer4 from "@/assets/images/customer-4.webp";
 import customer5 from "@/assets/images/customer-5.webp";
 import customer6 from "@/assets/images/customer-6.webp";
 
-function CustomerImage({ name, grid, image, index = 0 }: CustomerImageProps) {
+function CustomerImage({
+  name,
+  grid,
+  image,
+  index = 0,
+  videoId,
+}: CustomerImageProps) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
 
@@ -29,22 +35,40 @@ function CustomerImage({ name, grid, image, index = 0 }: CustomerImageProps) {
       ref={ref}
       className={cn(
         grid,
-        "group/image relative overflow-hidden rounded opacity-0 transition",
+        "relative overflow-hidden rounded opacity-0 transition",
+        !videoId && "group/image", // Only apply hover effects to images
         inView && `animate-delay-[${index * 250}ms]`,
         inView && "animate-fade animate-duration-1000 animate-ease-in-out",
       )}
     >
-      <Image
-        className="h-full object-cover transition group-hover/image:scale-105"
-        src={image}
-        alt={name}
-        decoding="async"
-        loading="lazy"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 transition group-hover/image:opacity-75"></div>
-      <div className="absolute bottom-0 left-0 right-0 p-4 text-center opacity-0 transition group-hover/image:opacity-100">
-        <span className="block text-sm font-bold text-white">{name}</span>
-      </div>
+      {videoId ? (
+        // YouTube Video Container
+        <div className="aspect-video h-full w-full">
+          <iframe
+            className="h-full w-full rounded"
+            src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&controls=0&modestbranding=1&playlist=${videoId}&background=1&color=white&playsinline=1&rel=0`}
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            loading="lazy"
+          />
+        </div>
+      ) : (
+        // Image Container
+        <>
+          <Image
+            className="h-full object-cover transition group-hover/image:scale-105"
+            src={image}
+            alt={name}
+            decoding="async"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 transition group-hover/image:opacity-75"></div>
+          <div className="absolute bottom-0 left-0 right-0 p-4 text-center opacity-0 transition group-hover/image:opacity-100">
+            <span className="block text-sm font-bold text-white">{name}</span>
+          </div>
+        </>
+      )}
     </div>
   );
 }
@@ -54,6 +78,7 @@ interface CustomerImageProps {
   name: string;
   grid: string;
   image: StaticImageData;
+  videoId?: string; // Add optional videoId prop
 }
 
 export default function CustomerSection() {
@@ -62,6 +87,7 @@ export default function CustomerSection() {
       name: "Customer 1",
       grid: "md:col-span-1 md:row-span-2 lg:col-span-1 lg:row-span-2",
       image: customer1,
+      videoId: "-hzMMlBJePw",
     },
     {
       name: "Customer 2",
