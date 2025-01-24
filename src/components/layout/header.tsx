@@ -160,7 +160,7 @@ export default function Header() {
             className="bg-gradient-to-r from-primary to-[#126BC1] [&_svg]:size-4"
             asChild
           >
-            <Link href="#contact-section" target="_self">
+            <Link href="#cta-section" target="_self">
               Hubungi Kami
             </Link>
           </Button>
