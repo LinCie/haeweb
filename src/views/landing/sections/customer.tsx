@@ -104,7 +104,7 @@ export default function CustomerSection() {
             </SectionSubtitle>
           </SectionHeader>
         </BlurFade>
-        <SectionContent className="grid h-[900px] grid-cols-1 gap-4 md:h-[700px] md:grid-cols-3 lg:h-[550px] lg:grid-cols-4">
+        <SectionContent className="grid h-[1500px] grid-cols-1 gap-4 md:h-[700px] md:grid-cols-3 lg:h-[550px] lg:grid-cols-4">
           {customers.map((customer, index) => {
             return (
               <CustomerImage key={customer.name} index={index} {...customer} />
