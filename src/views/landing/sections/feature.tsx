@@ -63,7 +63,7 @@ const Feature = ({
       inViewMargin="-100px"
       delay={detectMobile.isMobile() ? 0 : 0.25 * index}
       className={cn(
-        "group/feature relative flex flex-col py-10 dark:border-neutral-800 lg:border-r",
+        "group/feature relative flex flex-col py-6 md:py-10 dark:border-neutral-800 lg:border-r",
         (index === 0 || index === 4) && "dark:border-neutral-800 lg:border-l",
         index < 4 && "dark:border-neutral-800 lg:border-b",
       )}
@@ -114,7 +114,7 @@ export default function FeatureSection() {
           </BlurFade>
         </CardSectionHeader>
 
-        <CardSectionContent className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 py-12 md:grid-cols-2 lg:grid-cols-4">
+        <CardSectionContent className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 py-3 md:grid-cols-2 lg:grid-cols-4">
           {features.map((feature, index) => (
             <Feature key={index} {...feature} index={index} />
           ))}
