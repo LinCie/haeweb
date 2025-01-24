@@ -96,6 +96,12 @@ export default function Header() {
                       </NavigationMenuTrigger>
                       <NavigationMenuContent>
                         <ScrollArea className="flex max-h-96 w-[250px] flex-col gap-3 p-4">
+                          <ListItem
+                            title="All Categories"
+                            href="https://katalog.haebot.com/"
+                          >
+                            {/* {content.description} */}
+                          </ListItem>
                           {headerLink.content.map((content) => (
                             <ListItem
                               key={content.display}

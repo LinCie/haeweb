@@ -67,6 +67,11 @@ export function AppSidebar() {
                       {/* Nested menu items */}
                       <CollapsibleContent className="overflow-hidden data-[state=closed]:animate-slide-up data-[state=open]:animate-slide-down">
                         <SidebarMenuSub>
+                          <SidebarMenuSubItem>
+                            <a href="https://katalog.haebot.com/">
+                              <span>All Categories</span>
+                            </a>
+                          </SidebarMenuSubItem>
                           {link.content.map((content) => {
                             return (
                               <SidebarMenuSubItem key={content.display}>
