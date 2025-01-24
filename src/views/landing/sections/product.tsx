@@ -10,6 +10,8 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
 } from "@/components/ui/carousel";
 import {
   Section,
@@ -172,6 +174,8 @@ export default function ProductSection() {
                 <ProductCard key={product.name} index={index} {...product} />
               ))}
             </CarouselContent>
+            <CarouselPrevious className="ml-3 md:ml-0" />
+            <CarouselNext className="mr-3 md:mr-0" />
           </Carousel>
         </SectionContent>
       </SectionContainer>
