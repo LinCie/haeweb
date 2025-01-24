@@ -7,6 +7,7 @@ import {
   CarouselItem,
   type CarouselApi,
 } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 import banner1 from "@/assets/images/banner-1.webp";
 import banner2 from "@/assets/images/banner-2.webp";
@@ -40,6 +41,11 @@ export default function CarouselSection() {
             align: "start",
             loop: true,
           }}
+          plugins={[
+            Autoplay({
+              delay: 5000,
+            }),
+          ]}
           setApi={setApi}
         >
           <CarouselContent>
