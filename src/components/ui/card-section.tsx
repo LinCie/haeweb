@@ -18,7 +18,7 @@ function CardSectionContainer({
   return (
     <Card
       className={cn(
-        "mx-auto max-w-screen-xl px-6 backdrop-blur md:px-8 lg:px-12",
+        "mx-auto max-w-(--breakpoint-xl) px-6 backdrop-blur-sm md:px-8 lg:px-12",
         className,
       )}
       {...props}

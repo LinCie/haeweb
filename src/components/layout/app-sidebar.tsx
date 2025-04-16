@@ -109,7 +109,7 @@ export function AppSidebar() {
           return (
             <Button
               key={contact.link + idx + "-appbar"}
-              className="h-auto border-none bg-transparent px-4 py-4 outline-none"
+              className="h-auto border-none bg-transparent px-4 py-4 outline-hidden"
               variant="outline"
               asChild
             >

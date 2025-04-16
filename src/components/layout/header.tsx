@@ -36,7 +36,7 @@ const ListItem = React.forwardRef<
         <Link
           ref={ref}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-hidden transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
             className,
           )}
           href={href || "/"}
@@ -65,12 +65,12 @@ export default function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full bg-background/95 shadow backdrop-blur transition-all",
+        "sticky top-0 z-50 w-full bg-background/95 shadow-sm backdrop-blur-sm transition-all",
       )}
     >
       <div
         className={cn(
-          "mx-auto flex max-w-screen-2xl items-center justify-center gap-1 px-3 py-4 transition-all md:gap-5",
+          "mx-auto flex max-w-(--breakpoint-2xl) items-center justify-center gap-1 px-3 py-4 transition-all md:gap-5",
           isScrolled && "md:px-4 md:py-5",
         )}
       >
@@ -143,7 +143,7 @@ export default function Header() {
             return (
               <Button
                 key={contact.link + idx + "-header"}
-                className="h-auto border-none bg-transparent px-4 py-4 outline-none"
+                className="h-auto border-none bg-transparent px-4 py-4 outline-hidden"
                 variant="outline"
                 asChild
               >
@@ -157,7 +157,7 @@ export default function Header() {
             variant="expandIcon"
             Icon={Phone}
             iconPlacement="right"
-            className="bg-gradient-to-r from-primary to-[#126BC1] [&_svg]:size-4"
+            className="bg-linear-to-r from-primary to-[#126BC1] [&_svg]:size-4"
             asChild
           >
             <Link href="#cta-section" target="_self">

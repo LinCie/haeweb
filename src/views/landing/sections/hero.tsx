@@ -32,7 +32,7 @@ export default function HeroSection() {
       </div>
       <div className="absolute inset-0 top-[-100] z-0 bg-white/80" />
 
-      <div className="z-10 mx-auto flex h-full max-w-screen-xl flex-col items-center justify-center gap-12 px-6 md:flex-row md:gap-8 md:px-8">
+      <div className="z-10 mx-auto flex h-full max-w-(--breakpoint-xl) flex-col items-center justify-center gap-12 px-6 md:flex-row md:gap-8 md:px-8">
         {/* Text Section */}
         <div className="flex max-w-2xl flex-col justify-center md:pt-0">
           {/* Upper Button */}
@@ -42,7 +42,7 @@ export default function HeroSection() {
                 variant="expandIcon"
                 asChild
                 size="sm"
-                className="group rounded-full bg-secondary from-primary to-[#126BC1] hover:bg-gradient-to-r [&_svg]:size-4"
+                className="group rounded-full bg-secondary from-primary to-[#126BC1] hover:bg-linear-to-r [&_svg]:size-4"
                 Icon={ArrowRightIcon}
                 iconPlacement="right"
               >
@@ -93,7 +93,7 @@ export default function HeroSection() {
                 variant="expandIcon"
                 Icon={Phone}
                 iconPlacement="right"
-                className="bg-gradient-to-r from-primary to-[#126BC1] [&_svg]:size-4"
+                className="bg-linear-to-r from-primary to-[#126BC1] [&_svg]:size-4"
                 asChild
               >
                 <Link href="#contact-section" target="_self">

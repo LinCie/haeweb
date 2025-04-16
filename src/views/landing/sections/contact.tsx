@@ -30,7 +30,7 @@ export default function ContactSection() {
       id="contact-section"
       aria-labelledby="contact-section-title"
     >
-      <div className="mx-auto max-w-screen-xl">
+      <div className="mx-auto max-w-(--breakpoint-xl)">
         <CardSectionContent>
           <div className="flex flex-col gap-4 pt-12 lg:flex-row">
             <div className="flex-1">

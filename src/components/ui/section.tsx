@@ -16,7 +16,7 @@ function SectionContainer({
 }: React.ComponentPropsWithRef<"div">) {
   return (
     <div
-      className={cn("mx-auto max-w-screen-xl backdrop-blur", className)}
+      className={cn("mx-auto max-w-(--breakpoint-xl) backdrop-blur-sm", className)}
       {...props}
     />
   );

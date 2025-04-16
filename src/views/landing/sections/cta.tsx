@@ -19,13 +19,13 @@ export default function CTASection() {
           <BlurFade inView inViewMargin="-100px">
             <CardSectionTitle
               id="cta-section-title"
-              className="max-w-screen-lg text-center"
+              className="max-w-(--breakpoint-lg) text-center"
             >
               Optimalkan Kinerja CNC Anda Bersama HaeBot!
             </CardSectionTitle>
           </BlurFade>
           <BlurFade inView inViewMargin="-100px">
-            <CardSectionSubtitle className="max-w-screen-md text-center">
+            <CardSectionSubtitle className="max-w-(--breakpoint-md) text-center">
               Bergabunglah dengan kami di HaeBot untuk mendapatkan komponen CNC
               berkualitas tinggi dan layanan konsultasi ahli
             </CardSectionSubtitle>

@@ -68,7 +68,7 @@ function ProductCard({ name, image, index, link }: ProductCardProps) {
             </Button>
           </div>
         </div>
-        <div className="from-neutral-100 to-transparent p-2 transition-colors group-hover/card:bg-gradient-to-br">
+        <div className="from-neutral-100 to-transparent p-2 transition-colors group-hover/card:bg-linear-to-br">
           <div className="mb-2 font-semibold transition-all group-hover/card:translate-x-2">
             {name}
           </div>
