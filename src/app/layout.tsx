@@ -81,7 +81,7 @@ export default function RootLayout({
             <TopHeader />
             <Header />
             <div className="w-full">
-              <main className="w-full bg-background">{children}</main>
+              <main className="bg-background w-full">{children}</main>
             </div>
             <Footer />
           </div>

@@ -26,15 +26,17 @@ import { useMotionValueEvent, useScroll } from "framer-motion";
 import { contactIcons } from "@/shared/contacts";
 import { ScrollArea } from "../ui/scroll-area";
 
-const ListItem = React.forwardRef<
-  React.ComponentRef<"a">,
-  React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, href, ...props }, ref) => {
+const ListItem = ({
+  className,
+  title,
+  children,
+  href,
+  ...props
+}: React.ComponentPropsWithoutRef<"a">) => {
   return (
     <div>
       <NavigationMenuLink asChild>
         <Link
-          ref={ref}
           className={cn(
             "hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground block space-y-1 rounded-md p-3 leading-none no-underline outline-hidden transition-colors select-none",
             className,
@@ -50,8 +52,7 @@ const ListItem = React.forwardRef<
       </NavigationMenuLink>
     </div>
   );
-});
-ListItem.displayName = "ListItem";
+};
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
