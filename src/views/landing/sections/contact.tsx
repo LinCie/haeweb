@@ -68,7 +68,7 @@ export default function ContactSection() {
                           target="_blank"
                           href={contact.link}
                           aria-label={contact.link}
-                        >
+                          >
                           {contact.icon}
                         </Link>
                       </Button>
@@ -87,7 +87,7 @@ export default function ContactSection() {
                         <Link
                           target="_blank"
                           href="https://www.tokopedia.com/electronicsbot"
-                        >
+                          >
                           <Image
                             src={tokopedia}
                             alt="Tokopedia"
@@ -104,10 +104,7 @@ export default function ContactSection() {
                         variant="secondary"
                         asChild
                       >
-                        <Link
-                          target="_blank"
-                          href="https://shopee.co.id/farhan.id"
-                        >
+                        <Link target="_blank" href="https://shopee.co.id/farhan.id" >
                           <Image
                             src={shopee}
                             alt="Shopee"
@@ -127,7 +124,7 @@ export default function ContactSection() {
                         <Link
                           target="_blank"
                           href="https://www.bukalapak.com/u/ufam_kun"
-                        >
+                          >
                           <Image
                             src={bukalapak}
                             alt="Bukalapak"

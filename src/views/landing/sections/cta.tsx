@@ -34,7 +34,7 @@ export default function CTASection() {
         <CardSectionContent className="flex justify-center">
           <BlurFade inView inViewMargin="-100px">
             <Button asChild>
-              <Link href="https://wa.me/6285246428746" target="_blank">
+              <Link href="https://wa.me/6285246428746" target="_blank" >
                 Hubungi Kami <FaPhone aria-hidden className="ml-2 size-4" />
               </Link>
             </Button>

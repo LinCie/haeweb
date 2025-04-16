@@ -36,14 +36,14 @@ const ListItem = React.forwardRef<
         <Link
           ref={ref}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-hidden transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            "hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground block space-y-1 rounded-md p-3 leading-none no-underline outline-hidden transition-colors select-none",
             className,
           )}
           href={href || "/"}
           {...props}
         >
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+          <div className="text-sm leading-none font-medium">{title}</div>
+          <p className="text-muted-foreground line-clamp-2 text-sm leading-snug">
             {children}
           </p>
         </Link>
@@ -65,7 +65,7 @@ export default function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full bg-background/95 shadow-sm backdrop-blur-sm transition-all",
+        "bg-background/95 sticky top-0 z-50 w-full shadow-sm backdrop-blur-sm transition-all",
       )}
     >
       <div
@@ -91,7 +91,7 @@ export default function Header() {
                 if (headerLink.content !== undefined) {
                   return (
                     <NavigationMenuItem key={headerLink.display + "-header"}>
-                      <NavigationMenuTrigger className="bg-inherit text-foreground/80 hover:text-foreground/70 focus:text-foreground/70">
+                      <NavigationMenuTrigger className="text-foreground/80 hover:text-foreground/70 focus:text-foreground/70 bg-inherit">
                         {headerLink.display}
                       </NavigationMenuTrigger>
                       <NavigationMenuContent>
@@ -119,19 +119,18 @@ export default function Header() {
 
                 return (
                   <NavigationMenuItem key={headerLink.display + "-header"}>
-                    <Link href={headerLink.url} legacyBehavior passHref>
-                      <NavigationMenuLink
-                        aria-current={isCurrent ? "page" : "false"}
-                        className={cn(
-                          navigationMenuTriggerStyle(),
-                          "bg-inherit text-foreground/80 hover:text-foreground/70 focus:text-foreground/70",
-                          isCurrent &&
-                            "text-primary hover:text-primary/70 focus:text-primary/70",
-                        )}
-                      >
-                        {headerLink.display}
-                      </NavigationMenuLink>
-                    </Link>
+                    <NavigationMenuLink
+                      aria-current={isCurrent ? "page" : "false"}
+                      className={cn(
+                        navigationMenuTriggerStyle(),
+                        "text-foreground/80 hover:text-foreground/70 focus:text-foreground/70 bg-inherit",
+                        isCurrent &&
+                          "text-primary hover:text-primary/70 focus:text-primary/70",
+                      )}
+                      asChild
+                    >
+                      <Link href={headerLink.url}>{headerLink.display}</Link>
+                    </NavigationMenuLink>
                   </NavigationMenuItem>
                 );
               })}
@@ -157,7 +156,7 @@ export default function Header() {
             variant="expandIcon"
             Icon={Phone}
             iconPlacement="right"
-            className="bg-linear-to-r from-primary to-[#126BC1] [&_svg]:size-4"
+            className="from-primary bg-linear-to-r to-[#126BC1] [&_svg]:size-4"
             asChild
           >
             <Link href="#cta-section" target="_self">

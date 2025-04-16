@@ -44,7 +44,6 @@ export function AppSidebar() {
           />
         </div>
       </SidebarHeader>
-
       {/* Sidebar Content */}
       <SidebarContent>
         <SidebarGroup>
@@ -65,7 +64,7 @@ export function AppSidebar() {
                       </CollapsibleTrigger>
 
                       {/* Nested menu items */}
-                      <CollapsibleContent className="overflow-hidden data-[state=closed]:animate-slide-up data-[state=open]:animate-slide-down">
+                      <CollapsibleContent className="data-[state=closed]:animate-slide-up data-[state=open]:animate-slide-down overflow-hidden">
                         <SidebarMenuSub>
                           <SidebarMenuSubItem>
                             <a href="https://katalog.haebot.com/">
@@ -103,7 +102,6 @@ export function AppSidebar() {
           </SidebarMenu>
         </SidebarGroup>
       </SidebarContent>
-
       <SidebarFooter className="flex flex-row justify-evenly gap-4">
         {contactIcons.map((contact, idx) => {
           return (

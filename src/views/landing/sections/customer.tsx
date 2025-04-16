@@ -64,7 +64,7 @@ function CustomerImage({
             loading="lazy"
           />
           <div className="absolute inset-0 bg-linear-to-t from-black to-transparent opacity-0 transition group-hover/image:opacity-75"></div>
-          <div className="absolute bottom-0 left-0 right-0 p-4 text-center opacity-0 transition group-hover/image:opacity-100">
+          <div className="absolute right-0 bottom-0 left-0 p-4 text-center opacity-0 transition group-hover/image:opacity-100">
             <span className="block text-sm font-bold text-white">{name}</span>
           </div>
         </>
@@ -78,7 +78,7 @@ interface CustomerImageProps {
   name: string;
   grid: string;
   image: StaticImageData;
-  videoId?: string; // Add optional videoId prop
+  videoId?: string;
 }
 
 export default function CustomerSection() {

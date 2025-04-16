@@ -31,7 +31,6 @@ export default function HeroSection() {
         />
       </div>
       <div className="absolute inset-0 top-[-100] z-0 bg-white/80" />
-
       <div className="z-10 mx-auto flex h-full max-w-(--breakpoint-xl) flex-col items-center justify-center gap-12 px-6 md:flex-row md:gap-8 md:px-8">
         {/* Text Section */}
         <div className="flex max-w-2xl flex-col justify-center md:pt-0">
@@ -46,7 +45,7 @@ export default function HeroSection() {
                 Icon={ArrowRightIcon}
                 iconPlacement="right"
               >
-                <Link href="#feature-section">
+                <Link href="#feature-section" >
                   <AnimatedShinyText className="inline-flex items-center justify-center text-xs transition ease-out group-hover:text-background group-hover:duration-300">
                     ✨ Lihat layanan yang kami tawarkan
                   </AnimatedShinyText>

@@ -43,7 +43,7 @@ function ProductCard({ name, image, index, link }: ProductCardProps) {
   function ProductContent() {
     return (
       <Card className="group/card flex h-fit flex-col overflow-hidden rounded-xl">
-        <div className="relative h-[300px] select-none overflow-hidden">
+        <div className="relative h-[300px] overflow-hidden select-none">
           <Image
             loading="lazy"
             decoding="async"
@@ -59,7 +59,7 @@ function ProductCard({ name, image, index, link }: ProductCardProps) {
               iconPlacement="right"
               Icon={LuExternalLink}
               size="sm"
-              className="bg-transparent text-background opacity-0 outline outline-1 outline-background transition-opacity hover:bg-background hover:text-foreground group-hover/card:opacity-100"
+              className="text-background outline-background hover:bg-background hover:text-foreground bg-transparent opacity-0 outline-1 transition-opacity group-hover/card:opacity-100"
               asChild
             >
               <Link href={link} target="_blank">
@@ -72,7 +72,7 @@ function ProductCard({ name, image, index, link }: ProductCardProps) {
           <div className="mb-2 font-semibold transition-all group-hover/card:translate-x-2">
             {name}
           </div>
-          <div className="select-none space-y-2">
+          <div className="space-y-2 select-none">
             <Button
               variant="ringHover"
               size="sm"
@@ -171,7 +171,11 @@ export default function ProductSection() {
           >
             <CarouselContent className="-ml-8">
               {products.map((product, index) => (
-                <ProductCard key={product.name} index={index} {...product} />
+                <ProductCard
+                  key={`${product.name}-${index}-carousel`}
+                  index={index}
+                  {...product}
+                />
               ))}
             </CarouselContent>
             <CarouselPrevious className="ml-3 md:ml-0" />
