@@ -6,6 +6,7 @@ import CTASection from "./sections/cta";
 import AboutSection from "./sections/about";
 import ContactSection from "./sections/contact";
 import CarouselSection from "./sections/carousel";
+import FAQPage from "./sections/faq";
 
 export function LandingPage() {
   return (
@@ -17,6 +18,7 @@ export function LandingPage() {
       <CarouselSection />
       <ProductSection />
       <CustomerSection />
+      <FAQPage />
       <CTASection />
       <ContactSection />
     </>
