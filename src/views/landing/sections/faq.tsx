@@ -5,6 +5,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import BlurFade from "@/components/ui/blur-fade";
+import { Card, CardContent } from "@/components/ui/card";
 import {
   Section,
   SectionContainer,
@@ -42,7 +43,7 @@ export default function FAQPage() {
     {
       question: "Apakah Haebot melayani klien di luar wilayah Blitar?",
       answer:
-        "Tentu saja. Meskipun workshop utama kami berlokasi di Blitar, kami melayani dan mengirimkan produk ke seluruh wilayah Indonesia. Kami didukung oleh kemitraan logistik yang andal untuk memastikan pesanan Anda tiba dengan aman dan tepat waktu, di mana pun lokasi bisnis Anda.",
+        "Tentu saja. Meskipun toko utama kami berlokasi di Blitar, kami melayani dan mengirimkan produk ke seluruh wilayah Indonesia. Kami didukung oleh kemitraan logistik yang andal untuk memastikan pesanan Anda tiba dengan aman dan tepat waktu, di mana pun lokasi bisnis Anda.",
     },
     {
       question:
@@ -68,20 +69,24 @@ export default function FAQPage() {
         </BlurFade>
         <BlurFade inView inViewMargin="-100px">
           <SectionContent>
-            <Accordion type="single" collapsible className="w-full">
+            <Accordion type="single" collapsible className="w-full space-y-3">
               {questions.map((q, idx) => {
                 return (
                   <AccordionItem
                     key={`faq-${idx}`}
                     value={`faq-${idx}`}
-                    className="group bg-card text-card-foreground mb-4 rounded-lg border-b-0 px-6 last:mb-0"
+                    asChild
                   >
-                    <AccordionTrigger className="text-md text-left font-medium hover:cursor-pointer hover:no-underline">
-                      {q.question}
-                    </AccordionTrigger>
-                    <AccordionContent className="text-muted-foreground data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up overflow-hidden pt-2 text-base">
-                      {q.answer}
-                    </AccordionContent>
+                    <Card className="p-0">
+                      <CardContent className="px-0">
+                        <AccordionTrigger className="text-md p-5 text-left font-medium hover:cursor-pointer hover:no-underline">
+                          {q.question}
+                        </AccordionTrigger>
+                        <AccordionContent className="text-muted-foreground data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up overflow-hidden px-5 text-base">
+                          {q.answer}
+                        </AccordionContent>
+                      </CardContent>
+                    </Card>
                   </AccordionItem>
                 );
               })}
