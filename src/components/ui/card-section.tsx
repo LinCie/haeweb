@@ -18,7 +18,7 @@ function CardSectionContainer({
   return (
     <Card
       className={cn(
-        "mx-auto max-w-(--breakpoint-xl) px-6 backdrop-blur-sm md:px-8 lg:px-12",
+        "mx-auto max-w-(--breakpoint-xl) px-6 py-0 backdrop-blur-sm md:px-8 lg:px-12",
         className,
       )}
       {...props}
@@ -45,7 +45,7 @@ function CardSectionTitle({
   return (
     <h2
       className={cn(
-        "max-w-xl text-2xl font-bold leading-tight text-primary lg:text-3xl",
+        "text-primary max-w-xl text-2xl leading-tight font-bold lg:text-3xl",
         className,
       )}
       {...props}
@@ -60,7 +60,7 @@ function CardSectionSubtitle({
   return (
     <p
       className={cn(
-        "max-w-2xl pb-6 text-base text-muted-foreground md:text-lg",
+        "text-muted-foreground max-w-2xl pb-6 text-base md:text-lg",
         className,
       )}
       {...props}
