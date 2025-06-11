@@ -42,7 +42,7 @@ function ProductCard({ name, image, index, link }: ProductCardProps) {
 
   function ProductContent() {
     return (
-      <Card className="group/card flex h-fit flex-col overflow-hidden rounded-xl">
+      <Card className="group/card flex h-fit flex-col overflow-hidden rounded-xl py-0">
         <div className="relative h-[300px] overflow-hidden select-none">
           <Image
             loading="lazy"
