@@ -7,6 +7,7 @@ import AboutSection from "./sections/about";
 import ContactSection from "./sections/contact";
 import CarouselSection from "./sections/carousel";
 import FAQPage from "./sections/faq";
+import WarrantySection from "./sections/warranty";
 
 export function LandingPage() {
   return (
@@ -17,6 +18,7 @@ export function LandingPage() {
       <FeatureSection />
       <CarouselSection />
       <ProductSection />
+      <WarrantySection />
       <CustomerSection />
       <FAQPage />
       <CTASection />
