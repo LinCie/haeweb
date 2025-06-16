@@ -25,7 +25,7 @@ interface Message {
   isLoading?: boolean;
 }
 
-const API_BASE_URL = "http://localhost:8000";
+const API_BASE_URL = "https://api.haebot.com";
 const SESSION_STORAGE_KEY = "haebot_chat_session_id";
 
 export default function Chatbot() {
