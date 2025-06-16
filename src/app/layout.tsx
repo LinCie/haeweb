@@ -7,6 +7,7 @@ import { AppSidebar } from "@/components/layout/app-sidebar";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import TopHeader from "@/components/layout/top-header";
+import Chatbot from "@/components/chatbot";
 
 export const metadata: Metadata = {
   title: "HaeBot | Komponen & Konsultasi CNC | PT HaeBot Teknologi Indonesia",
@@ -83,6 +84,7 @@ export default function RootLayout({
             <div className="w-full">
               <main className="bg-background w-full">{children}</main>
             </div>
+            <Chatbot />
             <Footer />
           </div>
         </SidebarProvider>
