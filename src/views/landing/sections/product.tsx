@@ -27,14 +27,23 @@ import { useMobileDetect } from "@/lib/utils";
 import { useEffect, useState } from "react";
 import { categories } from "@/shared/categories";
 
+import logo from "@/assets/images/logo.png";
+
 interface ProductCardProps {
   index: number;
   name: string;
   link: string;
   image: StaticImageData;
+  consideration?: string;
 }
 
-function ProductCard({ name, image, index, link }: ProductCardProps) {
+function ProductCard({
+  name,
+  image,
+  index,
+  link,
+  consideration,
+}: ProductCardProps) {
   const detectMobile = useMobileDetect();
 
   const isInInitialView = detectMobile.isMobile() ? index < 1 : index < 4;
@@ -42,8 +51,16 @@ function ProductCard({ name, image, index, link }: ProductCardProps) {
 
   function ProductContent() {
     return (
-      <Card className="group/card flex h-fit flex-col overflow-hidden rounded-xl py-0">
+      <Card className="group/card flex h-full flex-col overflow-hidden rounded-xl py-0">
         <div className="relative h-[300px] overflow-hidden select-none">
+          <Image
+            src={logo}
+            alt="Logo Haebot"
+            width={90}
+            height={90}
+            className="absolute top-2 left-2 z-10 p-1"
+          />
+
           <Image
             loading="lazy"
             decoding="async"
@@ -68,11 +85,19 @@ function ProductCard({ name, image, index, link }: ProductCardProps) {
             </Button>
           </div>
         </div>
-        <div className="from-neutral-100 to-transparent p-2 transition-colors group-hover/card:bg-linear-to-br">
+        <div className="flex flex-grow flex-col from-neutral-100 to-transparent p-2 transition-colors group-hover/card:bg-linear-to-br">
           <div className="mb-2 font-semibold transition-all group-hover/card:translate-x-2">
             {name}
           </div>
-          <div className="space-y-2 select-none">
+
+          {consideration && (
+            <p className="text-muted-foreground mb-3 h-20 px-2 text-xs">
+              <span className="font-semibold">Perhatian: </span>
+              {consideration}
+            </p>
+          )}
+
+          <div className="mt-auto space-y-2 select-none">
             <Button
               variant="ringHover"
               size="sm"
@@ -112,11 +137,12 @@ function ProductCard({ name, image, index, link }: ProductCardProps) {
 
   if (isInInitialView) {
     return (
-      <CarouselItem className="pl-8 sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
+      <CarouselItem className="h-full pl-8 sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
         <BlurFade
           inView
           inViewMargin="-100px"
           delay={detectMobile.isMobile() ? 0 : 0.2 * index}
+          className="h-full"
         >
           <ProductContent />
         </BlurFade>
@@ -125,7 +151,7 @@ function ProductCard({ name, image, index, link }: ProductCardProps) {
   }
 
   return (
-    <CarouselItem className="pl-8 sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
+    <CarouselItem className="h-full pl-8 sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
       <ProductContent />
     </CarouselItem>
   );
@@ -138,16 +164,17 @@ export default function ProductSection() {
 
   useEffect(() => {
     async function loadCategories() {
+      const loadedProducts = [];
       for (const category of categories) {
         const { default: image } = await category.image();
-        setProducts((previous) => {
-          return previous.concat({
-            name: category.name,
-            link: category.link,
-            image: image,
-          });
+        loadedProducts.push({
+          name: category.name,
+          link: category.link,
+          image: image,
+          consideration: category.consideration,
         });
       }
+      setProducts(loadedProducts);
     }
     loadCategories();
   }, []);
@@ -169,7 +196,7 @@ export default function ProductSection() {
               loop: true,
             }}
           >
-            <CarouselContent className="-ml-8">
+            <CarouselContent className="-ml-8 flex">
               {products.map((product, index) => (
                 <ProductCard
                   key={`${product.name}-${index}-carousel`}
