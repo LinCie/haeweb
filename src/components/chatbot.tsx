@@ -130,7 +130,7 @@ export default function Chatbot() {
   };
 
   return (
-    <ExpandableChat size="md" position="bottom-right">
+    <ExpandableChat size="xl" position="bottom-right">
       <ExpandableChatHeader>
         <div className="flex items-center gap-3">
           <Avatar>
