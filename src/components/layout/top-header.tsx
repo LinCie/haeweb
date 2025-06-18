@@ -4,7 +4,7 @@ import { Phone } from "lucide-react";
 
 export default function TopHeader() {
   return (
-    <div className="z-20 h-18 w-full border-b">
+    <div className="bg-background z-20 h-18 w-full border-b">
       <div className="container mx-auto flex h-full items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-3">
           <Haebot className="fill-primary size-10" />
