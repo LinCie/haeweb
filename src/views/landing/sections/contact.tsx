@@ -11,7 +11,6 @@ import { contactIcons, ContactProps, contacts } from "@/shared/contacts";
 import Image from "next/image";
 import tokopedia from "@/assets/toko/tokopedia.webp";
 import shopee from "@/assets/toko/shopee.webp";
-import bukalapak from "@/assets/toko/bukalapak.webp";
 import Haebot from "@/assets/haebot";
 
 function ContactInfo({ icon, text }: ContactProps) {
