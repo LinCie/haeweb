@@ -300,3 +300,18 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Add this to your src/app/globals.css file */
+.slick-prev,
+.slick-next {
+  background-color: rgba(0, 0, 0, 0.3) !important;
+  border-radius: 9999px !important;
+  width: 40px !important;
+  height: 40px !important;
+  transition: background-color 0.3s ease;
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}

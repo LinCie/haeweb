@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Accordion,
   AccordionContent,
@@ -5,94 +7,92 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import BlurFade from "@/components/ui/blur-fade";
-import { Card, CardContent } from "@/components/ui/card";
 import {
   Section,
-  SectionContainer,
   SectionContent,
+  SectionContainer,
   SectionHeader,
-  SectionSubtitle,
   SectionTitle,
+  SectionSubtitle,
 } from "@/components/ui/section";
+import { HelpCircle } from "lucide-react";
 
-interface Question {
-  question: string;
-  answer: string;
-}
+const faqs = [
+  {
+    question: "Apa yang membedakan PT HaeBot dari pemasok CNC lainnya?",
+    answer:
+      "PT HaeBot tidak hanya menjual produk, kami menawarkan solusi lengkap. Kami berfokus pada konsultasi ahli, layanan perakitan mesin custom, dan dukungan purna jual yang andal. Dengan model bisnis yang melayani B2C dan B2B, kami memiliki pemahaman pasar yang luas, dari penghobi hingga kebutuhan industri skala besar.",
+  },
+  {
+    question: "Bagaimana PT HaeBot menjamin kualitas produknya?",
+    answer:
+      "Kualitas adalah prioritas kami. Kami memastikan semua produk, terutama suku cadang, bersumber langsung dari manufaktur terkemuka dan terpercaya di China. Setiap produk yang tiba di gudang kami melewati proses inspeksi kualitas yang ketat sebelum ditawarkan kepada pelanggan.",
+  },
+  {
+    question: "Apakah PT HaeBot melayani perakitan mesin custom?",
+    answer:
+      "Ya, salah satu layanan utama kami adalah perakitan dan kustomisasi mesin CNC. Tim kami dapat merancang dan membangun mesin yang spesifikasinya disesuaikan dengan kebutuhan unik proses produksi Anda, baik itu untuk skala kecil maupun industri.",
+  },
+  {
+    question:
+      "Apa saja cakupan layanan purna jual (after-sales) yang ditawarkan?",
+    answer:
+      "Kami berkomitmen pada kemitraan jangka panjang. Layanan purna jual kami mencakup garansi produk yang fleksibel, dukungan teknis profesional untuk perbaikan dan perawatan, serta akses berkelanjutan ke konsultasi ahli untuk memastikan mesin Anda beroperasi secara optimal.",
+  },
+  {
+    question: "Di wilayah mana saja PT HaeBot beroperasi?",
+    answer:
+      "Fokus utama geografis kami adalah Blitar dan pusat industri di sekitarnya seperti Malang, Kediri, dan Surabaya untuk memungkinkan layanan di tempat yang responsif. Namun, kami juga melayani klien di seluruh Indonesia melalui penjualan online dan kemitraan logistik yang andal.",
+  },
+  {
+    question: "Bagaimana proses untuk memulai konsultasi atau pemesanan B2B?",
+    answer:
+      "Anda dapat menghubungi kami langsung melalui tombol 'Hubungi Kami' di situs ini, atau melalui informasi kontak yang tersedia. Tim kami akan segera merespons untuk menjadwalkan sesi konsultasi gratis atau memandu Anda melalui proses pemesanan untuk kebutuhan bisnis Anda.",
+  },
+];
 
-export default function FAQPage() {
-  const questions: Question[] = [
-    {
-      question:
-        "Apa saja layanan utama yang disediakan oleh PT Haebot Teknologi Indonesia?",
-      answer:
-        "PT Haebot menyediakan solusi CNC komprehensif untuk kebutuhan bisnis Anda. Layanan kami mencakup: (1) Konsultasi Teknis untuk menemukan solusi paling efisien, (2) Penyediaan Suku Cadang CNC berkualitas tinggi, (3) Perakitan Mesin & Custom Build sesuai spesifikasi, serta (4) Jasa Perbaikan & Perawatan profesional untuk memastikan mesin Anda beroperasi secara optimal dan andal.",
-    },
-    {
-      question:
-        "Bagaimana cara saya melakukan pemesanan atau memulai konsultasi?",
-      answer:
-        "Anda dapat dengan mudah menghubungi kami melalui tombol 'Hubungi Kami' yang tersedia di halaman ini untuk terhubung langsung via WhatsApp. Tim ahli kami berkomitmen untuk memberikan respons cepat, biasanya dalam waktu kurang dari 2 jam pada hari kerja, untuk mendiskusikan kebutuhan Anda secara detail.",
-    },
-    {
-      question:
-        "Dari mana produk-produk CNC Haebot berasal dan bagaimana jaminan kualitasnya?",
-      answer:
-        "Kami menjamin kualitas tertinggi dengan bekerja sama secara langsung dengan manufaktur terkemuka dan terpercaya. Setiap produk yang kami tawarkan telah melewati proses seleksi dan quality control (QC) yang ketat untuk memastikan performa, durabilitas, dan presisi sesuai standar industri. Kepercayaan Anda adalah prioritas kami.",
-    },
-    {
-      question: "Apakah Haebot melayani klien di luar wilayah Blitar?",
-      answer:
-        "Tentu saja. Meskipun toko utama kami berlokasi di Blitar, kami melayani dan mengirimkan produk ke seluruh wilayah Indonesia. Kami didukung oleh kemitraan logistik yang andal untuk memastikan pesanan Anda tiba dengan aman dan tepat waktu, di mana pun lokasi bisnis Anda.",
-    },
-    {
-      question:
-        "Mengapa saya harus memilih Haebot sebagai partner solusi CNC saya?",
-      answer:
-        "Kami lebih dari sekadar pemasok; kami adalah partner strategis Anda. Haebot menawarkan kombinasi keunggulan berupa keahlian tim yang profesional, kualitas produk terjamin, solusi layanan yang lengkap dan terintegrasi, serta komitmen pada layanan pelanggan yang responsif untuk mendukung kelancaran bisnis Anda.",
-    },
-  ];
-
+export default function FaqSection() {
   return (
-    <Section>
-      <SectionContainer>
-        <BlurFade inView inViewMargin="-100px">
-          <SectionHeader className="items-center text-center">
-            <SectionTitle id="customer-section-title">
-              Pertanyaan Umum
-            </SectionTitle>
-            <SectionSubtitle>
-              Temukan jawaban atas pertanyaan paling sering ditanyakan oleh
-              calon mitra dan klien kami.
-            </SectionSubtitle>
-          </SectionHeader>
-        </BlurFade>
-        <BlurFade inView inViewMargin="-100px">
-          <SectionContent>
-            <Accordion type="single" collapsible className="w-full space-y-3">
-              {questions.map((q, idx) => {
-                return (
-                  <AccordionItem
-                    key={`faq-${idx}`}
-                    value={`faq-${idx}`}
-                    asChild
-                  >
-                    <Card className="p-0">
-                      <CardContent className="px-0">
-                        <AccordionTrigger className="text-md p-5 text-left font-medium hover:cursor-pointer hover:no-underline">
-                          {q.question}
-                        </AccordionTrigger>
-                        <AccordionContent className="text-muted-foreground data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up overflow-hidden px-5 text-base">
-                          {q.answer}
-                        </AccordionContent>
-                      </CardContent>
-                    </Card>
+    <Section id="faq" aria-labelledby="faq-title">
+      <SectionContainer className="py-16">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:gap-12">
+          {/* Left Column: Title and Subtitle */}
+          <div className="lg:col-span-1">
+            <BlurFade inView inViewMargin="-100px">
+              <SectionHeader className="items-start text-left">
+                <SectionTitle id="faq-title" className="text-3xl md:text-4xl">
+                  Pertanyaan Umum
+                </SectionTitle>
+                <SectionSubtitle className="mt-4 text-lg">
+                  Menemukan jawaban cepat untuk pertanyaan paling umum mengenai
+                  layanan dan produk kami. Jika Anda tidak menemukan yang Anda
+                  cari, jangan ragu untuk menghubungi kami.
+                </SectionSubtitle>
+              </SectionHeader>
+            </BlurFade>
+          </div>
+
+          {/* Right Column: Accordion */}
+          <div className="lg:col-span-2">
+            <BlurFade inView inViewMargin="-100px" delay={0.2}>
+              <Accordion type="single" collapsible className="w-full">
+                {faqs.map((faq, i) => (
+                  <AccordionItem key={i} value={`item-${i}`}>
+                    <AccordionTrigger className="text-left hover:no-underline">
+                      <div className="flex items-center gap-4">
+                        <HelpCircle className="text-primary h-6 w-6 flex-shrink-0" />
+                        <span className="font-semibold">{faq.question}</span>
+                      </div>
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground pl-10 text-base">
+                      {faq.answer}
+                    </AccordionContent>
                   </AccordionItem>
-                );
-              })}
-            </Accordion>
-          </SectionContent>
-        </BlurFade>
+                ))}
+              </Accordion>
+            </BlurFade>
+          </div>
+        </div>
       </SectionContainer>
     </Section>
   );
