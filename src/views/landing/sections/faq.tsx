@@ -9,7 +9,6 @@ import {
 import BlurFade from "@/components/ui/blur-fade";
 import {
   Section,
-  SectionContent,
   SectionContainer,
   SectionHeader,
   SectionTitle,

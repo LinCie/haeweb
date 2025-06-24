@@ -13,7 +13,13 @@ import aboutImage from "@/assets/images/customer-1.webp";
 import BlurFade from "@/components/ui/blur-fade";
 import { PackageCheck, Users, Wrench } from "lucide-react";
 
-const timelineData = [
+interface TimelineData {
+  year: string;
+  title: string;
+  description: string;
+}
+
+const timelineData: TimelineData[] = [
   {
     year: "2018",
     title: "Awal Mula sebagai Electronics Bot",
@@ -40,7 +46,13 @@ const timelineData = [
   },
 ];
 
-function TimelineItem({ item, isLast }: { item: any; isLast: boolean }) {
+function TimelineItem({
+  item,
+  isLast,
+}: {
+  item: TimelineData;
+  isLast: boolean;
+}) {
   return (
     <div className="flex items-start">
       <div className="mr-6 flex flex-col items-center">
