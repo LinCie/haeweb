@@ -1,10 +1,8 @@
 "use client";
 
 import Image, { StaticImageData } from "next/image";
-
 import { FaWhatsapp } from "react-icons/fa6";
 import { LuStore, LuExternalLink } from "react-icons/lu";
-
 import { Card } from "@/components/ui/card";
 import {
   Carousel,
@@ -19,6 +17,7 @@ import {
   SectionContainer,
   SectionHeader,
   SectionTitle,
+  SectionSubtitle,
 } from "@/components/ui/section";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -26,11 +25,9 @@ import BlurFade from "@/components/ui/blur-fade";
 import { useMobileDetect } from "@/lib/utils";
 import { useEffect, useState } from "react";
 import { categories } from "@/shared/categories";
-
 import logo from "@/assets/images/logo.png";
 
-interface ProductCardProps {
-  index: number;
+interface IProduct {
   name: string;
   link: string;
   image: StaticImageData;
@@ -43,24 +40,29 @@ function ProductCard({
   index,
   link,
   consideration,
-}: ProductCardProps) {
+}: {
+  index: number;
+} & IProduct) {
   const detectMobile = useMobileDetect();
-
-  const isInInitialView = detectMobile.isMobile() ? index < 1 : index < 4;
   const text = encodeURI(`Halo min! Mau tanya tentang ${name}`);
 
-  function ProductContent() {
-    return (
-      <Card className="group/card flex h-full flex-col overflow-hidden rounded-xl py-0">
-        <div className="relative h-[300px] overflow-hidden select-none">
+  return (
+    <BlurFade
+      inView
+      inViewMargin="-100px"
+      delay={detectMobile.isMobile() ? 0 : 0.05 * index}
+      className="h-full"
+    >
+      <Card className="group/card flex h-full flex-col overflow-hidden rounded-xl border py-0 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+        {/* Image Container */}
+        <div className="relative h-[250px] overflow-hidden select-none">
           <Image
             src={logo}
             alt="Logo Haebot"
-            width={90}
-            height={90}
+            width={80}
+            height={80}
             className="absolute top-2 left-2 z-10 p-1"
           />
-
           <Image
             loading="lazy"
             decoding="async"
@@ -68,38 +70,36 @@ function ProductCard({
             width={400}
             src={image}
             alt={name}
-            className="h-full w-full object-cover object-center transition group-hover/card:scale-105 group-hover/card:blur-[2px]"
+            className="h-full w-full object-cover object-center transition-all duration-500 ease-in-out group-hover/card:scale-105"
           />
-          <div className="absolute inset-0 flex items-center justify-center transition group-hover/card:bg-black/50">
+          <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-all duration-300 group-hover/card:opacity-100">
             <Button
-              variant="expandIcon"
-              iconPlacement="right"
-              Icon={LuExternalLink}
+              variant="outline"
               size="sm"
-              className="text-background outline-background hover:bg-background hover:text-foreground bg-transparent opacity-0 outline-1 transition-opacity group-hover/card:opacity-100"
+              className="transition-opacity"
               asChild
             >
               <Link href={link} target="_blank">
-                Lihat di Katalog
+                Lihat di Katalog <LuExternalLink className="ml-2 size-4" />
               </Link>
             </Button>
           </div>
         </div>
-        <div className="flex flex-grow flex-col from-neutral-100 to-transparent p-2 transition-colors group-hover/card:bg-linear-to-br">
-          <div className="mb-2 font-semibold transition-all group-hover/card:translate-x-2">
-            {name}
-          </div>
 
+        {/* Card Content */}
+        <div className="flex flex-grow flex-col p-5">
+          <h3 className="mb-2 text-xl font-bold">{name}</h3>
           {consideration && (
-            <p className="text-muted-foreground mb-3 h-20 px-2 text-xs">
+            <p className="text-muted-foreground mb-4 text-sm">
               <span className="font-semibold">Perhatian: </span>
               {consideration}
             </p>
           )}
 
-          <div className="mt-auto space-y-2 select-none">
+          {/* Action Buttons */}
+          <div className="mt-auto space-y-3 pt-4">
             <Button
-              variant="ringHover"
+              variant="default"
               size="sm"
               className="group/button w-full"
               asChild
@@ -108,14 +108,13 @@ function ProductCard({
                 Lihat di Katalog{" "}
                 <LuStore
                   aria-hidden
-                  className="ml-2 size-4 transition-all group-hover/button:translate-x-1 group-hover/button:rotate-6"
+                  className="ml-2 size-4 transition-transform group-hover/button:translate-x-1"
                 />
               </Link>
             </Button>
             <Button
-              variant="ringHover"
               size="sm"
-              className="group/button w-full bg-green-500 hover:bg-green-500/90 hover:ring-green-500/90"
+              className="group/button w-full bg-green-500 text-white hover:bg-green-600"
               asChild
             >
               <Link
@@ -125,55 +124,33 @@ function ProductCard({
                 Chat Kami{" "}
                 <FaWhatsapp
                   aria-hidden
-                  className="ml-2 size-4 transition-all group-hover/button:translate-x-1 group-hover/button:rotate-6"
+                  className="ml-2 size-4 transition-transform group-hover/button:translate-x-1"
                 />
               </Link>
             </Button>
           </div>
         </div>
       </Card>
-    );
-  }
-
-  if (isInInitialView) {
-    return (
-      <CarouselItem className="h-full pl-8 sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
-        <BlurFade
-          inView
-          inViewMargin="-100px"
-          delay={detectMobile.isMobile() ? 0 : 0.2 * index}
-          className="h-full"
-        >
-          <ProductContent />
-        </BlurFade>
-      </CarouselItem>
-    );
-  }
-
-  return (
-    <CarouselItem className="h-full pl-8 sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
-      <ProductContent />
-    </CarouselItem>
+    </BlurFade>
   );
 }
 
 export default function ProductSection() {
-  const [products, setProducts] = useState<Omit<ProductCardProps, "index">[]>(
-    [],
-  );
+  const [products, setProducts] = useState<IProduct[]>([]);
 
   useEffect(() => {
     async function loadCategories() {
-      const loadedProducts = [];
-      for (const category of categories) {
-        const { default: image } = await category.image();
-        loadedProducts.push({
-          name: category.name,
-          link: category.link,
-          image: image,
-          consideration: category.consideration,
-        });
-      }
+      const loadedProducts = await Promise.all(
+        categories.map(async (category) => {
+          const { default: image } = await category.image();
+          return {
+            name: category.name,
+            link: category.link,
+            image: image,
+            consideration: category.consideration,
+          };
+        }),
+      );
       setProducts(loadedProducts);
     }
     loadCategories();
@@ -182,11 +159,17 @@ export default function ProductSection() {
   return (
     <Section id="product-section" aria-labelledby="product-section-title">
       <SectionContainer>
-        <SectionHeader className="mb-4 items-center text-center md:mb-5">
+        <SectionHeader className="items-center text-center">
           <BlurFade inView inViewMargin="-100px">
             <SectionTitle id="product-section-title">
               Galeri Produk Kami
             </SectionTitle>
+          </BlurFade>
+          <BlurFade inView inViewMargin="-100px" delay={0.1}>
+            <SectionSubtitle>
+              Jelajahi berbagai kategori produk kami untuk menemukan solusi yang
+              tepat untuk kebutuhan CNC Anda.
+            </SectionSubtitle>
           </BlurFade>
         </SectionHeader>
         <SectionContent>
@@ -195,18 +178,20 @@ export default function ProductSection() {
               align: "start",
               loop: true,
             }}
+            className="w-full"
           >
-            <CarouselContent className="-ml-8 flex">
+            <CarouselContent className="-ml-4">
               {products.map((product, index) => (
-                <ProductCard
-                  key={`${product.name}-${index}-carousel`}
-                  index={index}
-                  {...product}
-                />
+                <CarouselItem
+                  key={index}
+                  className="basis-full p-4 md:basis-1/2 lg:basis-1/3 xl:basis-1/4"
+                >
+                  <ProductCard index={index} {...product} />
+                </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="ml-3 md:ml-0" />
-            <CarouselNext className="mr-3 md:mr-0" />
+            <CarouselPrevious className="hidden lg:flex" />
+            <CarouselNext className="hidden lg:flex" />
           </Carousel>
         </SectionContent>
       </SectionContainer>
